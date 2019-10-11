@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1570754153 source:c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\cliente.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+
+1570755869 c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\utn.h
+
+1570754204 c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\cliente.h
+
+1570753486 source:c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+	"residuo.h"
+
+1570752209 source:c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\pedido.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"pedido.h"
+
+1570757493 c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\pedido.h
+
+1570760230 c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\residuo.h
+
+1570760351 source:c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\residuo.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"residuo.h"
+
+1570755869 source:c:\users\alumno\desktop\parcial 1 2019\laboratorio 1 parcial 2019\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
