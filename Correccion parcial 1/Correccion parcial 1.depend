@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1571251439 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1571251563 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\utn.h
+	"pedido.h"
+	"cliente.h"
+
+1571251445 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\main.c
+	"cliente.h"
+	"pedido.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
+1571251067 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\cliente.h
+
+1571251245 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\pedido.h
+	"Cliente.h"
+
+1571251430 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\cliente.c
+	"cliente.h"
+	"pedido.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
+1571251430 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\pedido.c
+	"pedido.h"
+	"cliente.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
