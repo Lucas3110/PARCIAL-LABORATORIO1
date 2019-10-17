@@ -11,7 +11,7 @@ typedef struct
     int isEmpty;
 
     int idCli;
-    int estado;
+    int estado; //0 pendiente 1 completado
     float kilo;
     float kilHDPE;
     float kilLDPE;

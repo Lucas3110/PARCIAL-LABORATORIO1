@@ -181,65 +181,112 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     i=0;
     //PEDIDO
 
-/*
+
 
     (*contadorIdpedido)++;
     arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    //arrayCliente[i].tipo=1;
-    strcpy(arrayPedido[i].nombre,"Telefonica");
-    strcpy(arrayPedido[i].cuit,"30-11223344-5");
-    strcpy(arrayPedido[i].localidad,"CABA");
-    strcpy(arrayPedido[i].direccion,"Corrientes");
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
     (*contadorIdpedido)++;
     i++;
 
 
 
-    arrayPedido[i].isEmpty=0;
+     arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    //arrayCliente[i].tipo=1;
-    strcpy(arrayPedido[i].nombre,"Telefonica");
-    strcpy(arrayPedido[i].cuit,"30-11223344-5");
-    strcpy(arrayPedido[i].localidad,"CABA");
-    strcpy(arrayPedido[i].direccion,"Corrientes");
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
     (*contadorIdpedido)++;
+    i++;
 
-    arrayPedido[i].isEmpty=0;
+
+   arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    //arrayCliente[i].tipo=1;
-    strcpy(arrayPedido[i].nombre,"Telefonica");
-    strcpy(arrayPedido[i].cuit,"30-11223344-5");
-    strcpy(arrayPedido[i].localidad,"CABA");
-    strcpy(arrayPedido[i].direccion,"Corrientes");
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
     (*contadorIdpedido)++;
+    i++;
 
-    arrayPedido[i].isEmpty=0;
+     arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    //arrayCliente[i].tipo=1;
-    strcpy(arrayPedido[i].nombre,"Telefonica");
-    strcpy(arrayPedido[i].cuit,"30-11223344-5");
-    strcpy(arrayPedido[i].localidad,"CABA");
-    strcpy(arrayPedido[i].direccion,"Corrientes");
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
     (*contadorIdpedido)++;
+    i++;
 
-    arrayPedido[i].isEmpty=0;
+     arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    //arrayCliente[i].tipo=1;
-    strcpy(arrayPedido[i].nombre,"Telefonica");
-    strcpy(arrayPedido[i].cuit,"30-11223344-5");
-    strcpy(arrayPedido[i].localidad,"CABA");
-    strcpy(arrayPedido[i].direccion,"Corrientes");
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
     (*contadorIdpedido)++;
+    i++;
 
-    arrayPedido[i].isEmpty=0;
+     arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    //arrayCliente[i].tipo=1;
-    strcpy(arrayPedido[i].nombre,"Telefonica");
-    strcpy(arrayPedido[i].cuit,"30-11223344-5");
-    strcpy(arrayPedido[i].localidad,"CABA");
-    strcpy(arrayPedido[i].direccion,"Corrientes");
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
+    (*contadorIdpedido)++;
+    i++;
 
-*/
+     arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
+    (*contadorIdpedido)++;
+    i++;
+
+     arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
+    (*contadorIdpedido)++;
+    i++;
+
+     arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    arrayPedido[i].idCli=1;
+    arrayPedido[i].estado=1;
+    arrayPedido[i].kilo=1000;
+    arrayPedido[i].kilHDPE=200;
+    arrayPedido[i].kilLDPE=145;
+    arrayPedido[i].kilPP=230;
+
+
+
+
+
        return 0;
 }
