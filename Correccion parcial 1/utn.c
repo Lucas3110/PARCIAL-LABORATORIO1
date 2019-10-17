@@ -560,3 +560,51 @@ int isValidChar(char charRecibido)
         retorno=0;
     return retorno;
 }
+
+
+
+/** \brief Solicita el ingreso de una letra y valida su tamaño y su contenido
+* \param msg char* Mensaje a mostrar al solicitar el string
+* \param msgError char* Mensaje de error a mostrar
+* \param reintentos int* Puntero a la cantidad de reintentos para ingresar el string solicitado
+* \param resultado char* Puntero a la variable donde se almacena el string ingresado
+* \return int Return (-1) si Error [tamaño o contenido invalido o NULL pointer] - (0) si Ok
+*/
+int utn_getLetra(char* msg, char* msgError, int reintentos, char* resultado)
+{
+    int retorno=-1;
+    char bufferChar;
+    int min=1;
+    int max=sizeof(char)+1;
+
+    if(msg!=NULL && msgError!=NULL && min<=max && reintentos>=0 && resultado!=NULL)
+    {
+        do
+        {
+            if(!getString(msg,msgError,min,max,&reintentos,&bufferChar))
+            {
+                if(isValidLetra(bufferChar)==1)
+                {
+                    *resultado=bufferChar;
+                    retorno=0;
+                    break;
+                }
+                else
+                {
+                    printf("%s 2",msgError);
+                    reintentos--;
+                }
+            }
+        }
+        while(reintentos>=0);
+    }
+    return retorno;
+}
+
+int isValidLetra(char charRecibido)
+{
+    int retorno=1;
+    if(charRecibido<'A' || (charRecibido>'Z' && charRecibido<'a') || charRecibido>'z')
+        retorno=0;
+    return retorno;
+}

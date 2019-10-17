@@ -18,6 +18,7 @@ int main()
     int opcion;
     int contadorIdcliente=0;
     int contadorIdpedido=0;
+    char opcionB;
 
 
     Cliente arrayCliente[QTY_ARRAY_CLI];
@@ -32,8 +33,8 @@ int main()
     {
         utn_getUnsignedInt("\n\n1) Alta de cliente \n2) Modificar datos de cliente \n3) Baja de cliente"
                            "\n4) Crear pedido de recoleccion \n5) Procesar residuos \n6) Imprimir clientes"
-                           "\n7) Imprimir pedidos pendientes \n8) Imprimir pedidos procesados \n9) Salir\n",                   //cambiar
-                           "\nError",1,sizeof(int),1,9,2,&opcion);
+                           "\n7) Imprimir pedidos pendientes \n8) Imprimir pedidos procesados \n9) informes \n11) Salir\n",                   //cambiar
+                           "\nError",1,sizeof(int),1,11,2,&opcion);
         switch(opcion)
         {
             case 1: //Alta
@@ -89,18 +90,78 @@ int main()
                 cliente_ordenarPorDobleCriterio(arrayCliente,QTY_ARRAY_CLI,SORT_UP,SORT_DOWN);                   //cambiar
                 break;
 */
-            case 9://Salir
-                break;
-            default:
-                printf("\nOpcion no valida");
-        }
-        printf("\n");
-        system("pause");
-        system("cls");
+          case 9://Informes
+                system("cls");
+                   do
+                    {
+                        if(utn_getLetra("\n\nInformes:\nA) Cliente con mas pedidos pendientes"
+                                        "\nB) Cliente con mas pedidos completados\nC)"
+                                        "Cliente con mas pedidos\nD) Cliente que reciclo"
+                                        "mas kilos\nE) Cliente que reciclo menos kilos"
+                                        "\nF) Cantidad de clientes que reciclaron mas de 1000 kilos"
+                                        "\nG) Cantidad de clientes que reciclaron menos de 100 kilos\nH)"
+                                        " Imprimir pedidos completados\nI) Cant kil PP promedio por cliente"
+                                        " \nJ) Ingresar cuit e informar cant total tipo\nK) Volver\n","\nError",1,&opcionB)!=0)
+                            opcionB='K';   //Salir
+                        else
+                        {
+                            switch(opcionB)
+                            {
+                                case 'A':
 
-    } while(opcion!=9);
+                                    break;
 
-    return 0;
+                                case 'B':
+
+
+                                case 'C':
+
+                                    break;
+
+                                case 'D':
+
+                                    break;
+
+                                case 'E':
+
+                                    break;
+
+                                case 'F':
+                                    break;
+
+                                case 'G':
+
+                                    break;
+
+                                case 'H':
+
+                                    break;
+
+                                case 'K'://Salir
+                                    break;
+                                default:
+                                    printf("\nOpcion no valida");
+                            }
+                        }
+                    }while(opcionB!='K');
+                   //saque break
+
+                case 11:
+                    break;
+
+                default:
+                    printf("\nOpcion no valida");
+            }
+             printf("\n");
+             system("pause");
+             system("cls");
+
+
+    }while(opcion!=11);
+
+        return 0;
+
+
 }
 
 

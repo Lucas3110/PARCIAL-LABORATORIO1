@@ -170,7 +170,7 @@
 	"utn.h"
 	"cliente.h"
 
-1571358941 c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\utn.h
+1571365417 c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\utn.h
 
 1571358941 c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\cliente.h
 
@@ -184,13 +184,13 @@
 
 1571364346 c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\pedido.h
 
-1571358941 source:c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\utn.c
+1571365417 source:c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1571363157 source:c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\main.c
+1571365288 source:c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

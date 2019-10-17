@@ -32,3 +32,6 @@ int isValidAlphanumeric(char* stringRecibido);
 
 int utn_getChar(char* msg, char* msgError, int min, int max, int reintentos, char* resultado);
 int isValidChar(char charRecibido);
+
+int utn_getLetra(char* msg, char* msgError, int reintentos, char* resultado);
+int isValidLetra(char charRecibido);
