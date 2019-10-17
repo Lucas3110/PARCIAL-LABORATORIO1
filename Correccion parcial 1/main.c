@@ -10,7 +10,7 @@
 #define SORT_UP 1
 #define SORT_DOWN 0
 
-cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[],int *contadorIdcliente,int *contadorIdpedido);
+//cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[],int *contadorIdcliente,int *contadorIdpedido);
 
 int main()
 {
@@ -27,7 +27,7 @@ int main()
     Pedido arrayPedido[QTY_ARRAY_CLI];
     pedido_inicializar(arrayPedido,QTY_ARRAY_PED);
 
-    cargarDatos(arrayCliente,arrayPedido, &contadorIdcliente, &contadorIdpedido);
+    //cargarDatos(arrayCliente,arrayPedido, &contadorIdcliente, &contadorIdpedido);
 
     do
     {
@@ -163,7 +163,7 @@ int main()
 
 
 }
-
+/*
 
 int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdcliente, int *contadorIdpedido)
 
@@ -173,7 +173,6 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     (*contadorIdcliente)++;
     arrayCliente[i].isEmpty=0;
     arrayCliente[i].idCli=*contadorIdcliente;
-    //arrayCliente[i].tipo=1;
     strcpy(arrayCliente[i].nombre,"Telefonica");
     strcpy(arrayCliente[i].cuit,"30-11223344-5");
     strcpy(arrayCliente[i].localidad,"CABA");
@@ -185,7 +184,6 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
 
     arrayCliente[i].isEmpty=0;
     arrayCliente[i].idCli=*contadorIdcliente;
-    //arrayCliente[i].tipo=1;
     strcpy(arrayCliente[i].nombre,"DATASOFT");
     strcpy(arrayCliente[i].cuit,"30-44556677-6");
     strcpy(arrayCliente[i].localidad,"CABA");
@@ -196,7 +194,6 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
 
     arrayCliente[i].isEmpty=0;
     arrayCliente[i].idCli=*contadorIdcliente;
-    //arrayCliente[i].tipo=1;
     strcpy(arrayCliente[i].nombre,"NESTLE");
     strcpy(arrayCliente[i].cuit,"30-11223344-5");
     strcpy(arrayCliente[i].localidad,"CABA");
@@ -208,7 +205,6 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
 
     arrayCliente[i].isEmpty=0;
     arrayCliente[i].idCli=*contadorIdcliente;
-    //arrayCliente[i].tipo=1;
     strcpy(arrayCliente[i].nombre,"Telefonica");
     strcpy(arrayCliente[i].cuit,"30-11223344-5");
     strcpy(arrayCliente[i].localidad,"CABA");
@@ -220,7 +216,6 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
 
     arrayCliente[i].isEmpty=0;
     arrayCliente[i].idCli=*contadorIdcliente;
-    //arrayCliente[i].tipo=1;
     strcpy(arrayCliente[i].nombre,"Telefonica");
     strcpy(arrayCliente[i].cuit,"30-11223344-5");
     strcpy(arrayCliente[i].localidad,"CABA");
@@ -232,7 +227,6 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
 
     arrayCliente[i].isEmpty=0;
     arrayCliente[i].idCli=*contadorIdcliente;
-    //arrayCliente[i].tipo=1;
     strcpy(arrayCliente[i].nombre,"Telefonica");
     strcpy(arrayCliente[i].cuit,"30-11223344-5");
     strcpy(arrayCliente[i].localidad,"CABA");
@@ -351,3 +345,4 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
 
        return 0;
 }
+*/
