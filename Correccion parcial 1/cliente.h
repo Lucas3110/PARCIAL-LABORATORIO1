@@ -1,48 +1,35 @@
-#ifndef CLIENTE_H_
-#define CLIENTE_H_
-#define TEXT_SIZE 20
-#define CANT_CLIENTE 100
+#ifndef CLIENTE_H_INCLUDED
+#define CLIENTE_H_INCLUDED
+
+#define TEXT_SIZEA 20
+#define TEXT_SIZEB 15
+#define TEXT_SIZEC 40
 
 typedef struct
 {
-    char calle[TEXT_SIZE];
-    int altura;
-
-}Direccion;
-
-typedef struct
-{
-    int idCliente;
+    int idCli;
     int isEmpty;
-    char nombreCliente[TEXT_SIZE];
-    char localidadCliente[TEXT_SIZE];
-    char cuitCliente[14];
-    Direccion direccion;
+    //-----------------
+    char nombre[TEXT_SIZEA];
+    char direccion[TEXT_SIZEB];
+    char localidad[TEXT_SIZEA];
+    char cuit[TEXT_SIZEA]; //USAR VALI CUIT
+
 
 }Cliente;
 
-void imprimeMenu();
-//imprime menu del ABM
-
-int cliente_Inicializar(Cliente array[], int size);
-//inicializa el array de Cliente
-
-int cliente_buscarEmpty(Cliente array[], int size, int* posicion);
-//busca la primera posicion vacia que encuentre en el array Cliente
-
-int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion);
-//busca el ID de un cliente en el array y devuelve la posicion
-
-int cliente_alta(Cliente array[], int size, int* contadorID);
-//da de alta un cliente y se le asigna un ID
-
-int cliente_baja(Cliente clieArray[], int sizeClieArray,int contadorID, int* flag);
-//se ingresa un ID de Cliente y se da de baja a ese cliente
-
-int cliente_modificar(Cliente array[], int sizeArray,int contadorID);
-//se ingresa un ID de Cliente y se permite modifica la direccion y/o localidad del cliente
-
-int cliente_listar(Cliente array[], int size);
-//imprime un listado del array de Cliente
 
 #endif // CLIENTE_H_INCLUDED
+
+int cliente_inicializar(Cliente array[], int size);                                    //cambiar cliente
+int cliente_buscarEmpty(Cliente array[], int size, int* posicion);                    //cambiar cliente
+int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion);                    //cambiar cliente
+int cliente_buscarInt(Cliente array[], int size, int valorBuscado, int* posicion);                    //cambiar cliente
+int cliente_buscarString(Cliente array[], int size, char* valorBuscado, int* indice);                    //cambiar cliente
+int cliente_alta(Cliente array[], int size, int* contadorID);                          //cambiar cliente
+int cliente_baja(Cliente array[], int sizeArray);                                      //cambiar cliente
+int cliente_bajaValorRepetidoInt(Cliente array[], int sizeArray, int valorBuscado);
+int cliente_modificar(Cliente array[], int sizeArray);                                //cambiar cliente
+int cliente_ordenarPorDobleCriterio(Cliente array[],int size, int orderFirst, int orderSecond);                                  //cambiar cliente
+int cliente_listar(Cliente array[], int size);                      //cambiar cliente
+

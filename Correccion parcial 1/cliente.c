@@ -1,27 +1,19 @@
-#include "cliente.h"
-#include "pedido.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
+#include "cliente.h" //cambiar por nombre entidad
 
 
-void imprimeMenu()
-{
-	printf("\n1.Alta de cliente");
-	printf("\n2.Modificacion de cliente");
-	printf("\n3.Baja de cliente");
-	printf("\n4.Crear pedido de recoleccion");
-	printf("\n5.Procesar residuos");
-	printf("\n6.Imprimir clientes");
-	printf("\n7.Imprimir pedidos pendientes");
-	printf("\n8.Imprimir pedidos procesados");
-	printf("\n9.Salir");
-	printf("\n");
-
-}
-
-int cliente_Inicializar(Cliente array[], int size)
+/** \brief  To indicate that all position in the array are empty,
+*          this function put the flag (isEmpty) in TRUE in all
+*          position of the array
+* \param array cliente Array of cliente
+* \param size int Array length
+* \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+*
+*/
+int cliente_inicializar(Cliente array[], int size)                                    //cambiar cliente
 {
     int retorno=-1;
     if(array!= NULL && size>0)
@@ -36,8 +28,16 @@ int cliente_Inicializar(Cliente array[], int size)
 }
 
 //*****************************************
-
-int cliente_buscarEmpty(Cliente array[], int size, int* posicion)
+//Buscar
+//Int
+/** \brief Busca el primer lugar vacio en un array
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \param posicion int* Puntero a la posicion del array donde se encuentra el valor buscado
+* \return int Return (-1) si no encuentra un lugar vacio o Error [Invalid length or NULL pointer] - (0) si encuentra una posicion vacia
+*
+*/
+int cliente_buscarEmpty(Cliente array[], int size, int* posicion)                    //cambiar cliente
 {
     int retorno=-1;
     int i;
@@ -56,8 +56,14 @@ int cliente_buscarEmpty(Cliente array[], int size, int* posicion)
     return retorno;
 }
 
-
-int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion)
+/** \brief Busca un ID en un array y devuelve la posicion en que se encuentra
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \param posicion int* Puntero a la posicion del array donde se encuentra el valor buscado
+* \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
+*
+*/
+int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion)                    //cambiar cliente
 {
     int retorno=-1;
     int i;
@@ -67,7 +73,7 @@ int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion)
         {
             if(array[i].isEmpty==1)
                 continue;
-            else if(array[i].idCliente==valorBuscado)
+            else if(array[i].idCli==valorBuscado)                                                   //cambiar campo ID
             {
                 retorno=0;
                 *posicion=i;
@@ -77,138 +83,44 @@ int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion)
     }
     return retorno;
 }
+/*
+/** \brief Busca un int en un array y devuelve la posicion en que se encuentra
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \param posicion int* Puntero a la posicion del array donde se encuentra el valor buscado
+* \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
+*
 
-int cliente_alta(Cliente array[], int size, int* contadorID)
+int cliente_buscarInt(Cliente array[], int size, int valorBuscado, int* posicion)                    //cambiar cliente
 {
     int retorno=-1;
-    int posicion;
-    if(array!=NULL && size>0 && contadorID!=NULL)
+    int i;
+    if(array!= NULL && size>=0)
     {
-        if(cliente_buscarEmpty(array,size,&posicion)==-1)
+        for(i=0;i<size;i++)
         {
-            printf("\nNo hay lugares vacios");
-        }
-        else
-        {
-        	array[posicion].isEmpty=0;
-        	utn_getCUIT("\nIngrese Cuil: XX-XXXXXXXX-X","\nError",2,array[posicion].cuitCliente);
-        	utn_getName("\nIngrese nombre de Cliente: ","\nError",1,TEXT_SIZE,2,array[posicion].nombreCliente);
-            getString("\nIngrese localidad: ","\nError",1,TEXT_SIZE,2,array[posicion].localidadCliente);
-            getString("\nIngrese calle: ","\nError",1,TEXT_SIZE,2,array[posicion].direccion.calle);
-            array[posicion].idCliente = *contadorID;
-            printf( "\n ID: %d"
-            		"\n Cuil: %s"
-            		"\n Nombre: %s"
-            		"\n Localidad: %s"
-            		"\n Calle: %s",
-				   array[posicion].idCliente,
-				   array[posicion].cuitCliente,
-				   array[posicion].nombreCliente,
-				   array[posicion].localidadCliente,
-				   array[posicion].direccion.calle);
-            retorno=0;
-        }
-    }
-    return retorno;
-}
-
-//*****************************************
-
-int cliente_baja(Cliente clieArray[], int sizeClieArray,int contadorID, int* flag)
-{
-    int retorno=-1;
-    int posicion;
-    int id;
-    char opcion;
-    if(clieArray!=NULL && sizeClieArray>0)
-    {
-    	utn_getInt(&id,"\nID de cliente a dar de baja: ","\nError",1,contadorID,1);
-        if(cliente_buscarID(clieArray,sizeClieArray,id,&posicion)==-1)
-        {
-            printf("\nNo existe este ID");
-        }
-        else
-        {
-        	utn_getChar("\nEsta seguro que desea dar de baja? S/N","\nError",'A','S',2,&opcion);
-        	switch(opcion)
-        	{
-        	  case 'S':
-        		  clieArray[posicion].isEmpty=1;
-        		  clieArray[posicion].idCliente=0;
-        		  strcpy(clieArray[posicion].nombreCliente,"");
-        		  strcpy(clieArray[posicion].localidadCliente,"");
-        		  strcpy(clieArray[posicion].cuitCliente,"");
-        		  strcpy(clieArray[posicion].direccion.calle,"");
-        		  (*flag)--;
-        	      break;
-        	  case 'N':
-        		  printf("\nBaja cancelada");
-        	      break;
-        	  default:
-        		  printf("\nOpcion no valida");
-        	 }
-
-        }
-
-        retorno=0;
-    }
-
-   	return retorno;
-}
-
-
-int cliente_modificar(Cliente array[], int sizeArray, int contadorID)
-{
-    int retorno=-1;
-    int posicion;
-    int id;
-    char opcion;
-    if(array!=NULL && sizeArray>0)
-    {
-    	cliente_listar(array,sizeArray);
-    	utn_getInt(&id,"\nID de cliente a modificar: ","\nError",1,contadorID,2);
-        if(cliente_buscarID(array,sizeArray,id,&posicion)==-1)
-        {
-            printf("\nNo existe este ID");
-        }
-        else
-        {
-            do
+            if(array[i].isEmpty==1)
+                continue;
+            else if(array[i].varInt1==valorBuscado)                                                   //cambiar campo varInt
             {
-            	printf( "\n ID: %d"
-            	        "\n Cuil: %s"
-            	        "\n Nombre: %s"
-            	        "\n Localidad: %s"
-            	        "\n Calle: %s",
-            			array[posicion].idCliente,
-						array[posicion].cuitCliente,
-            			array[posicion].nombreCliente,
-            			array[posicion].localidadCliente,
-            			array[posicion].direccion.calle);
-                utn_getChar("\nModificar: Direccion(A) Localidad(B) S(Salir)","\nError",'A','S',2,&opcion);
-                switch(opcion)
-                {
-                    case 'A':
-                    	getString("\nIngrese calle: ","\nError",1,TEXT_SIZE,2,array[posicion].direccion.calle);;
-                        break;
-                    case 'B':
-                    	getString("\nIngrese localidad: ","\nError",1,TEXT_SIZE,2,array[posicion].localidadCliente);
-                        break;
-                    case 'S':
-                        break;
-                    default:
-                        printf("\nOpcion no valida");
-                }
-            }while(opcion!='S');
-            retorno=0;
+                retorno=0;
+                *posicion=i;
+                break;
+            }
         }
     }
     return retorno;
 }
-
-//*****************************************
-
-int cliente_listar(Cliente array[], int size)
+*/
+//String
+/** \brief Busca un string en un array
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \param posicion int* Puntero a la posicion del array donde se encuentra el valor buscado
+* \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
+*
+*/
+int cliente_buscarString(Cliente array[], int size, char* valorBuscado, int* indice)                    //cambiar cliente
 {
     int retorno=-1;
     int i;
@@ -218,19 +130,261 @@ int cliente_listar(Cliente array[], int size)
         {
             if(array[i].isEmpty==1)
                 continue;
-            else
-            	printf( "\n ID: %d"
-            	        "\n Cuil: %s"
-            			"\n Nombre: %s"
-            			"\n Localidad: %s"
-                		"\n Calle: %s",
-            			array[i].idCliente,
-            		    array[i].cuitCliente,
-               		    array[i].nombreCliente,
-            		    array[i].localidadCliente,
-            		    array[i].direccion.calle);
+            else if(strcmp(array[i].nombre,valorBuscado)==0)                                        //cambiar campo varString
+            {
+                *indice=i;
+                retorno=0;
+                break;
+            }
+        }
+    }
+    return retorno;
+}
+
+//*****************************************
+//Alta
+/** \brief Solicita los datos para completar la primer posicion vacia de un array
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \param contadorID int* Puntero al ID unico que se va a asignar al nuevo elemento
+* \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
+*
+*/
+int cliente_alta(Cliente array[], int size, int* contadorID)                          //cambiar cliente
+{
+    int retorno=-1;
+    int posicion;
+    if(array!=NULL && size>0 && contadorID!=NULL)
+    {
+        if(cliente_buscarEmpty(array,size,&posicion)==-1)                          //cambiar cliente
+        {
+            printf("\nNo hay lugares vacios");
+        }
+        else        {
+
+            array[posicion].isEmpty=0;
+            utn_getName("\nNombre de cliente: ","\nNombre no valido",1,TEXT_SIZEA,1,array[posicion].nombre);
+            utn_getName("\nDireccion: ","\nDireccion no valida",1,TEXT_SIZEB,1,array[posicion].direccion);
+            utn_getName("\nLocalidad: ","\nLocalidad no valida",1,TEXT_SIZEA,1,array[posicion].localidad);    //mensaje + cambiar campo varString
+            utn_getCUIT("\nCUIT con guion: ","\nCUIT no valido",1,array[posicion].cuit);
+            (*contadorID)++;
+            array[posicion].idCli=*contadorID;
+            printf("\nID: %d\nNombre: %s\nDireccion: %s\nLocalidad: %s"
+                   "\nCUIT: %s",
+                   array[posicion].idCli,array[posicion].nombre,
+                   array[posicion].direccion,array[posicion].localidad,array[posicion].cuit);
+            retorno=0;
+        }
+    }
+    return retorno;
+}
+
+//*****************************************
+//Baja valor unico
+/** \brief Borra un elemento del array por ID
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
+*
+*/
+int cliente_baja(Cliente array[], int sizeArray)                                      //cambiar cliente
+{
+    int retorno=-1;
+    int posicion;
+    int id;
+    if(array!=NULL && sizeArray>0)
+    {
+        utn_getUnsignedInt("\nID a cancelar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);   //cambiar si no se busca por ID
+        if(cliente_buscarID(array,sizeArray,id,&posicion)==-1)                //cambiar si no se busca por ID
+        {
+            printf("\nNo existe este ID");                                    //cambiar si no se busca por ID
+        }
+        else
+        {
+            array[posicion].isEmpty=1;
+            array[posicion].idCli=0;
+            strcpy(array[posicion].nombre,"");
+            strcpy(array[posicion].direccion,"");
+            strcpy(array[posicion].localidad,"");
+            strcpy(array[posicion].cuit,"");
+            retorno=0;
+        }
+    }
+    return retorno;
+}
+/*
+//Baja valor repetido
+/** \brief Borra todos los elemento del array que contengan el valor buscado
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \param valorBuscado int Valor a buscar en el array
+* \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
+*
+
+int cliente_bajaValorRepetidoInt(Cliente array[], int sizeArray, int valorBuscado) //cuando hay que dar de baja todas las posiciones en las que se encuentra ese int
+{
+    int retorno=-1;
+    int i;
+    if(array!=NULL && sizeArray>0)
+    {
+        for(i=0;i<sizeArray;i++)
+        {
+            if(array[i].idCli==valorBuscado)                                //cambiar si no se busca por ID
+            {
+                array[i].isEmpty=1;
+                array[i].idCli=0;
+                strcpy(array[i].nombre,"");
+                strcpy(array[i].direccion,"");
+                strcpy(array[i].localidad,"");
+                strcpy(array[i].cuit,"");                               //cambiar campo varString
+
+            }
         }
         retorno=0;
     }
     return retorno;
 }
+
+*/
+
+//*****************************************
+//Modificar
+/** \brief Busca un elemento por ID y modifica sus campos
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se modifica el elemento exitosamente
+*
+*/
+int cliente_modificar(Cliente array[], int sizeArray)                       //cambiar cliente
+{
+    int retorno=-1;
+    int posicion;
+    int id;                                                                   //cambiar si no se busca por ID
+    char opcion;
+    if(array!=NULL && sizeArray>0)
+    {
+        utn_getUnsignedInt("\nID a modificar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);     //cambiar si no se busca por ID
+        if(cliente_buscarID(array,sizeArray,id,&posicion)==-1)               //cambiar si no se busca por ID
+        {
+            printf("\nNo existe este ID");                                    //cambiar si no se busca por ID
+        }
+        else
+        {
+            do
+            {       //copiar printf de alta
+                 printf("\n ID: %d\n nombre: %s\n direccion: %s\n localidad: %s\n cuit: %s",
+                   array[posicion].idCli,array[posicion].nombre,
+                   array[posicion].direccion,array[posicion].localidad,array[posicion].cuit);
+                utn_getChar("\nModificar: A B C D E (salir)","\nError",'A','E',1,&opcion);
+                switch(opcion)
+                {   case 'A':
+                        system("cls");
+                        utn_getName("\n: ","\nError",1,TEXT_SIZEA,1,array[posicion].nombre);   //mensaje + cambiar campo varString
+                        break;
+                    case 'B':
+                        system("cls");
+                        utn_getName("\n: ","\nError",1,TEXT_SIZEB,1,array[posicion].direccion);   //mensaje + cambiar campo varString
+                        break;
+                    case 'C':
+                        system("cls");
+                        utn_getName("\n: ","\nError",1,TEXT_SIZEA,1,array[posicion].localidad);  //mensaje + cambiar campo varString
+                        break;
+                    case 'D':
+                        system("cls");
+                        utn_getName("\n: ","\nError",1,TEXT_SIZEA,1,array[posicion].cuit);  //mensaje + cambiar campo varString
+                        break;
+
+                    case 'E':
+                        break;
+                    default:
+                        printf("\nOpcion no valida");
+                }
+            }while(opcion!='E');
+            retorno=0;
+        }
+    }
+    return retorno;
+}
+
+/*
+//Ordenar
+/** \brief Ordena por campo XXXXX los elementos de un array ante la igualdad de estos ordena por el campo ZZZZZZ
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \param orderFirst int Determina si el orden del primer criterio es ascendete o descendente
+* \param orderSecond int Determina si el orden del segunbdo criterio es ascendete o descendente
+* \param size int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se ordena exitosamente
+*
+
+int cliente_ordenarPorDobleCriterio(Cliente array[],int size, int orderFirst, int orderSecond)  //cambiar cliente
+{
+    int retorno=-1;
+    int i;
+    Cliente buffer;
+    int flagSwap;
+
+    if(array!=NULL && size>=0)
+    {
+        do
+        {
+            flagSwap=0;
+            for (i = 1; i < size-1; i++)
+            {
+                if( ((strcmp(array[i].nombre,array[i+1].nombre) < 0) && orderFirst) ||
+                    ((strcmp(array[i].nombre,array[i+1].nombre) > 0) && !orderFirst) )
+                {
+                    flagSwap=1;
+                    buffer = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = buffer;
+                }
+                else if(strcmp(array[i].nombre,array[i+1].nombre) == 0)
+                {
+                    if( ((array[i].varFloat1 < array[i+1].varFloat1) && orderSecond) ||
+                        ((array[i].varFloat1 > array[i+1].varFloat1) && !orderSecond) )
+                    {
+                        flagSwap=1;
+                        buffer = array[i];
+                        array[i] = array[i+1];
+                        array[i+1] = buffer;
+                    }
+                }
+            }
+        }while(flagSwap);
+        retorno=0;
+    }
+    return retorno;
+}
+*/
+//*****************************************
+//Listar
+/** \brief Lista los elementos de un array
+* \param array cliente Array de cliente
+* \param size int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se lista exitosamente
+*
+*/
+int cliente_listar(Cliente array[], int size)                      //cambiar cliente
+{
+    int retorno=-1;
+    int i;
+    if(array!=NULL && size>0)
+    {
+        for(i=0;i<size;i++)
+        {
+            if(array[i].isEmpty==1)
+                continue;
+            else
+                printf("\nID: %d\nNombre: %s\nDireccion: %s\nLocalidad: %s\nCuit: %s",
+                       array[i].idCli,array[i].nombre,array[i].direccion,array[i].localidad
+                       ,array[i].cuit);      //cambiar todos
+        }
+        retorno=0;
+    }
+    return retorno;
+}
+
+
+
+

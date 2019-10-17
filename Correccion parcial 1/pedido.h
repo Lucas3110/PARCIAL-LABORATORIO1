@@ -1,40 +1,37 @@
-#ifndef PEDIDO_H_
-#define PEDIDO_H_
+#ifndef PEDIDO_H_INCLUDED
+#define PEDIDO_H_INCLUDED
 
-#define TEXT_SIZE 20
-#define CANT_PEDIDO 1000
-
-#include "Cliente.h"
+#define TEXT_SIZEA 20
+#define TEXT_SIZEB 15
+#define TEXT_SIZEC 40
 
 typedef struct
 {
-    int idPedido;
+    int idPed;
     int isEmpty;
-    int idCliente;
-    float cantKilos;
-    int estado; //0-pendiente/1-completado
-    int kilosHDPE;
-    int kilosLDPE;
-    int kilosPP;
 
-}Pedidos;
+    int idCli;
+    int estado;
+    float kilo;
+    float kilHDPE;
+    float kilLDPE;
+    float kilPP;
 
-int pedidos_Inicializar(Pedidos array[], int size);
-//inicializa el array de Pedidos
 
-int pedidos_buscarEmpty(Pedidos array[], int size, int* posicion);
-//busca la primera posicion vacia que encuentre en el array Pedidos
+}Pedido;
 
-int pedidos_buscarID(Pedidos array[], int size, int valorBuscado, int* posicion);
-//busca el ID de un pedido en el array y devuelve la posicion
 
-int pedidos_alta(Pedidos array[], int size, int* contadorID, int contadorCliente);
-//da de alta un pedido y se le asigna un ID
+#endif // PEDIDO_H_INCLUDED
 
-int pedidos_procesar(Pedidos array[], int sizeArray, int contadorID);
-//se imprimen los pedidos pendientes por pantalla y se ingresan en kilos la cantidad de plastico reciclado de los 3 tipos diferentes. El resto es deshechado
-
-int pedidos_listar(Pedidos array[], int size);
-//imprime un listado del array de Pedidos
-
-#endif /* PEDIDO_H_ */
+int pedido_inicializar(Pedido array[], int size);                                    //cambiar pedido
+int pedido_buscarEmpty(Pedido array[], int size, int* posicion);                    //cambiar pedido
+int pedido_buscarID(Pedido array[], int size, int valorBuscado, int* posicion);                    //cambiar pedido
+int pedido_buscarInt(Pedido array[], int size, int valorBuscado, int* posicion);                    //cambiar pedido
+int pedido_buscarString(Pedido array[], int size, char* valorBuscado, int* indice);                    //cambiar pedido
+int pedido_alta(Pedido array[], int size, int* contadorID);                          //cambiar pedido
+int pedido_baja(Pedido array[], int sizeArray);                                      //cambiar pedido
+int pedido_bajaValorRepetidoInt(Pedido array[], int sizeArray, int valorBuscado);
+int pedido_modificar(Pedido array[], int sizeArray);                                //cambiar pedido
+int pedido_ordenarPorDobleCriterio(Pedido array[],int size, int orderFirst, int orderSecond);                                  //cambiar pedido
+int pedido_listar(Pedido array[], int size);                      //cambiar pedido
+int pedido_alta2(Pedido array[], int sizeArray);

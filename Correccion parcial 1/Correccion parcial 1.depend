@@ -1,40 +1,165 @@
 # depslib dependency file v1.0
-1571251439 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\utn.c
+1571234206 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1571251563 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\utn.h
-	"pedido.h"
-	"cliente.h"
+1571065238 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\utn.h
 
-1571251445 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\main.c
+1571235106 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
 	"cliente.h"
 	"pedido.h"
+
+1571068759 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\cliente.h
+
+1571077174 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\pedido.h
+
+1571234758 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\cliente.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
-
-1571251067 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\cliente.h
-
-1571251245 c:\users\lucas\desktop\correccion parcial\correccion parcial 1\pedido.h
-	"Cliente.h"
-
-1571251430 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\cliente.c
 	"cliente.h"
-	"pedido.h"
+
+1571234750 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\pedido.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
-
-1571251430 source:c:\users\lucas\desktop\correccion parcial\correccion parcial 1\pedido.c
 	"pedido.h"
-	"cliente.h"
+
+1571234758 source:c:\users\lucas\desktop\hasta aca funca, cambio alta pedido\correccion parcial 1\cliente.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+
+1571065238 c:\users\lucas\desktop\hasta aca funca, cambio alta pedido\correccion parcial 1\utn.h
+
+1571068759 c:\users\lucas\desktop\hasta aca funca, cambio alta pedido\correccion parcial 1\cliente.h
+
+1571235148 source:c:\users\lucas\desktop\hasta aca funca, cambio alta pedido\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+
+1571077174 c:\users\lucas\desktop\hasta aca funca, cambio alta pedido\correccion parcial 1\pedido.h
+
+1571234750 source:c:\users\lucas\desktop\hasta aca funca, cambio alta pedido\correccion parcial 1\pedido.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"pedido.h"
+
+1571234206 source:c:\users\lucas\desktop\hasta aca funca, cambio alta pedido\correccion parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1571234758 source:c:\users\lucas\desktop\alta 3.0\correccion parcial 1\cliente.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+
+1571065238 c:\users\lucas\desktop\alta 3.0\correccion parcial 1\utn.h
+
+1571068759 c:\users\lucas\desktop\alta 3.0\correccion parcial 1\cliente.h
+
+1571321526 source:c:\users\lucas\desktop\alta 3.0\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+
+1571320060 c:\users\lucas\desktop\alta 3.0\correccion parcial 1\pedido.h
+
+1571234750 source:c:\users\lucas\desktop\alta 3.0\correccion parcial 1\pedido.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"pedido.h"
+
+1571234206 source:c:\users\lucas\desktop\alta 3.0\correccion parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1571234758 source:c:\users\lucas\desktop\pto 5\correccion parcial 1\cliente.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+
+1571065238 c:\users\lucas\desktop\pto 5\correccion parcial 1\utn.h
+
+1571068759 c:\users\lucas\desktop\pto 5\correccion parcial 1\cliente.h
+
+1571326045 source:c:\users\lucas\desktop\pto 5\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+
+1571326453 c:\users\lucas\desktop\pto 5\correccion parcial 1\pedido.h
+
+1571234206 source:c:\users\lucas\desktop\pto 5\correccion parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1571326045 source:c:\users\lucas\desktop\pto 5\correccion parcial 1\pedido.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"pedido.h"
+	"cliente.h"
+
+1571234758 source:c:\users\lucas\desktop\alta residuo casi\correccion parcial 1\cliente.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+
+1571065238 c:\users\lucas\desktop\alta residuo casi\correccion parcial 1\utn.h
+
+1571068759 c:\users\lucas\desktop\alta residuo casi\correccion parcial 1\cliente.h
+
+1571326045 source:c:\users\lucas\desktop\alta residuo casi\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+
+1571326453 c:\users\lucas\desktop\alta residuo casi\correccion parcial 1\pedido.h
+
+1571234206 source:c:\users\lucas\desktop\alta residuo casi\correccion parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 	"utn.h"
 
