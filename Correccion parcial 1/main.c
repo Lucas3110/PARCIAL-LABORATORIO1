@@ -9,6 +9,8 @@
 #define SORT_UP 1
 #define SORT_DOWN 0
 
+cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[],int *contadorIdcliente,int *contadorIdpedido);
+
 int main()
 {
 
@@ -23,7 +25,7 @@ int main()
     Pedido arrayPedido[QTY_ARRAY_TIPO];
     pedido_inicializar(arrayPedido,QTY_ARRAY_TIPO);
 
-
+    cargarDatos(arrayCliente,arrayPedido, &contadorIdcliente, &contadorIdpedido);
 
     do
     {
@@ -101,3 +103,142 @@ int main()
 }
 
 
+int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdcliente, int *contadorIdpedido)
+
+{
+    int i=0;
+
+    (*contadorIdcliente)++;
+    arrayCliente[i].isEmpty=0;
+    arrayCliente[i].idCli=*contadorIdcliente;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayCliente[i].nombre,"Telefonica");
+    strcpy(arrayCliente[i].cuit,"30-11223344-5");
+    strcpy(arrayCliente[i].localidad,"CABA");
+    strcpy(arrayCliente[i].direccion,"Corrientes");
+    (*contadorIdcliente)++;
+    i++;
+
+
+
+    arrayCliente[i].isEmpty=0;
+    arrayCliente[i].idCli=*contadorIdcliente;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayCliente[i].nombre,"DATASOFT");
+    strcpy(arrayCliente[i].cuit,"30-44556677-6");
+    strcpy(arrayCliente[i].localidad,"CABA");
+    strcpy(arrayCliente[i].direccion,"Corrientes");
+    (*contadorIdcliente)++;
+    i++;
+
+
+    arrayCliente[i].isEmpty=0;
+    arrayCliente[i].idCli=*contadorIdcliente;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayCliente[i].nombre,"NESTLE");
+    strcpy(arrayCliente[i].cuit,"30-11223344-5");
+    strcpy(arrayCliente[i].localidad,"CABA");
+    strcpy(arrayCliente[i].direccion,"Corrientes");
+    (*contadorIdcliente)++;
+    i++;
+
+
+
+    arrayCliente[i].isEmpty=0;
+    arrayCliente[i].idCli=*contadorIdcliente;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayCliente[i].nombre,"Telefonica");
+    strcpy(arrayCliente[i].cuit,"30-11223344-5");
+    strcpy(arrayCliente[i].localidad,"CABA");
+    strcpy(arrayCliente[i].direccion,"Corrientes");
+    (*contadorIdcliente)++;
+    i++;
+
+
+
+    arrayCliente[i].isEmpty=0;
+    arrayCliente[i].idCli=*contadorIdcliente;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayCliente[i].nombre,"Telefonica");
+    strcpy(arrayCliente[i].cuit,"30-11223344-5");
+    strcpy(arrayCliente[i].localidad,"CABA");
+    strcpy(arrayCliente[i].direccion,"Corrientes");
+    (*contadorIdcliente)++;
+    i++;
+
+
+
+    arrayCliente[i].isEmpty=0;
+    arrayCliente[i].idCli=*contadorIdcliente;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayCliente[i].nombre,"Telefonica");
+    strcpy(arrayCliente[i].cuit,"30-11223344-5");
+    strcpy(arrayCliente[i].localidad,"CABA");
+    strcpy(arrayCliente[i].direccion,"Corrientes");
+
+
+    i=0;
+    //PEDIDO
+
+/*
+
+    (*contadorIdpedido)++;
+    arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayPedido[i].nombre,"Telefonica");
+    strcpy(arrayPedido[i].cuit,"30-11223344-5");
+    strcpy(arrayPedido[i].localidad,"CABA");
+    strcpy(arrayPedido[i].direccion,"Corrientes");
+    (*contadorIdpedido)++;
+    i++;
+
+
+
+    arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayPedido[i].nombre,"Telefonica");
+    strcpy(arrayPedido[i].cuit,"30-11223344-5");
+    strcpy(arrayPedido[i].localidad,"CABA");
+    strcpy(arrayPedido[i].direccion,"Corrientes");
+    (*contadorIdpedido)++;
+
+    arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayPedido[i].nombre,"Telefonica");
+    strcpy(arrayPedido[i].cuit,"30-11223344-5");
+    strcpy(arrayPedido[i].localidad,"CABA");
+    strcpy(arrayPedido[i].direccion,"Corrientes");
+    (*contadorIdpedido)++;
+
+    arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayPedido[i].nombre,"Telefonica");
+    strcpy(arrayPedido[i].cuit,"30-11223344-5");
+    strcpy(arrayPedido[i].localidad,"CABA");
+    strcpy(arrayPedido[i].direccion,"Corrientes");
+    (*contadorIdpedido)++;
+
+    arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayPedido[i].nombre,"Telefonica");
+    strcpy(arrayPedido[i].cuit,"30-11223344-5");
+    strcpy(arrayPedido[i].localidad,"CABA");
+    strcpy(arrayPedido[i].direccion,"Corrientes");
+    (*contadorIdpedido)++;
+
+    arrayPedido[i].isEmpty=0;
+    arrayPedido[i].idPed=*contadorIdpedido;
+    //arrayCliente[i].tipo=1;
+    strcpy(arrayPedido[i].nombre,"Telefonica");
+    strcpy(arrayPedido[i].cuit,"30-11223344-5");
+    strcpy(arrayPedido[i].localidad,"CABA");
+    strcpy(arrayPedido[i].direccion,"Corrientes");
+
+*/
+       return 0;
+}
