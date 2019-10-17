@@ -275,31 +275,23 @@ int cliente_modificar(Cliente array[], int sizeArray)                       //ca
                  printf("\n ID: %d\n nombre: %s\n direccion: %s\n localidad: %s\n cuit: %s",
                    array[posicion].idCli,array[posicion].nombre,
                    array[posicion].direccion,array[posicion].localidad,array[posicion].cuit);
-                utn_getChar("\nModificar: A B C D E (salir)","\nError",'A','E',1,&opcion);
+                utn_getChar("\nModificar: A-direccion B-localidad C-salir","\nError",'A','C',1,&opcion);
                 switch(opcion)
                 {   case 'A':
                         system("cls");
-                        utn_getName("\n: ","\nError",1,TEXT_SIZEA,1,array[posicion].nombre);   //mensaje + cambiar campo varString
+                        utn_getName("\nNueva direccion: ","\nError",1,TEXT_SIZEB,1,array[posicion].direccion);   //mensaje + cambiar campo varString
                         break;
                     case 'B':
                         system("cls");
-                        utn_getName("\n: ","\nError",1,TEXT_SIZEB,1,array[posicion].direccion);   //mensaje + cambiar campo varString
-                        break;
-                    case 'C':
-                        system("cls");
-                        utn_getName("\n: ","\nError",1,TEXT_SIZEA,1,array[posicion].localidad);  //mensaje + cambiar campo varString
-                        break;
-                    case 'D':
-                        system("cls");
-                        utn_getName("\n: ","\nError",1,TEXT_SIZEA,1,array[posicion].cuit);  //mensaje + cambiar campo varString
+                        utn_getName("\nNueva localidad: ","\nError",1,TEXT_SIZEA,1,array[posicion].localidad);  //mensaje + cambiar campo varString
                         break;
 
-                    case 'E':
+                    case 'C':
                         break;
                     default:
                         printf("\nOpcion no valida");
                 }
-            }while(opcion!='E');
+            }while(opcion!='C');
             retorno=0;
         }
     }

@@ -5,7 +5,8 @@
 #include "cliente.h"
 #include "pedido.h"
 
-#define QTY_ARRAY_TIPO 10
+#define QTY_ARRAY_CLI 100
+#define QTY_ARRAY_PED 100
 #define SORT_UP 1
 #define SORT_DOWN 0
 
@@ -19,11 +20,11 @@ int main()
     int contadorIdpedido=0;
 
 
-    Cliente arrayCliente[QTY_ARRAY_TIPO];
-    cliente_inicializar(arrayCliente,QTY_ARRAY_TIPO);
+    Cliente arrayCliente[QTY_ARRAY_CLI];
+    cliente_inicializar(arrayCliente,QTY_ARRAY_CLI);
 
-    Pedido arrayPedido[QTY_ARRAY_TIPO];
-    pedido_inicializar(arrayPedido,QTY_ARRAY_TIPO);
+    Pedido arrayPedido[QTY_ARRAY_CLI];
+    pedido_inicializar(arrayPedido,QTY_ARRAY_PED);
 
     cargarDatos(arrayCliente,arrayPedido, &contadorIdcliente, &contadorIdpedido);
 
@@ -37,7 +38,7 @@ int main()
         {
             case 1: //Alta
                 system("cls");
-                if(!cliente_alta(arrayCliente,QTY_ARRAY_TIPO,&contadorIdcliente));                   //cambiar
+                if(!cliente_alta(arrayCliente,QTY_ARRAY_CLI,&contadorIdcliente));                   //cambiar
                 {
                     printf("\n----Se dio de ALTA exitosamente!----\n");
                 }
@@ -45,7 +46,7 @@ int main()
 
             case 2: //Modificar
                 system("cls");
-                if(!cliente_modificar(arrayCliente,QTY_ARRAY_TIPO));
+                if(!cliente_modificar(arrayCliente,QTY_ARRAY_CLI));
                 {
                      printf("\n----Se modifico exitosamente----\n");
                 }
@@ -53,7 +54,7 @@ int main()
 
             case 3: //Baja
                 system("cls");
-                if(!cliente_baja(arrayCliente,QTY_ARRAY_TIPO));
+                if(!cliente_baja(arrayCliente,QTY_ARRAY_CLI));
                 {
                     printf("\n----Se dio de BAJA exitosamente!----\n");
                 }
@@ -61,10 +62,10 @@ int main()
 
             case 4: //Alta PEDIDO
                 system("cls");
-                cliente_listar(arrayCliente,QTY_ARRAY_TIPO);
+                cliente_listar(arrayCliente,QTY_ARRAY_PED);
                 printf("\n");
 
-                if(!pedido_alta(arrayPedido,QTY_ARRAY_TIPO,&contadorIdpedido));                   //cambiar
+                if(!pedido_alta(arrayPedido,QTY_ARRAY_PED,&contadorIdpedido));                   //cambiar
                 {
                     printf("\n----Se dio de ALTA exitosamente!----\n");
                 }
@@ -73,19 +74,19 @@ int main()
             case 5://alta residuo
                 system("cls");
 
-                 pedido_alta2(arrayPedido,QTY_ARRAY_TIPO);                   //cambiar
+                 pedido_alta2(arrayPedido,QTY_ARRAY_PED);                   //cambiar
 
 
                 break;
 
             case 6://Listar
                 system("cls");
-                cliente_listar(arrayCliente,QTY_ARRAY_TIPO);
+                cliente_listar(arrayCliente,QTY_ARRAY_CLI);
                 break;
 /*
             case 5://Ordenar
                 system("cls");
-                cliente_ordenarPorDobleCriterio(arrayCliente,QTY_ARRAY_TIPO,SORT_UP,SORT_DOWN);                   //cambiar
+                cliente_ordenarPorDobleCriterio(arrayCliente,QTY_ARRAY_CLI,SORT_UP,SORT_DOWN);                   //cambiar
                 break;
 */
             case 9://Salir

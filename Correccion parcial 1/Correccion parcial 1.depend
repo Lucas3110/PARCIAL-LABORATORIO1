@@ -190,3 +190,11 @@
 	<string.h>
 	"utn.h"
 
+1571363157 source:c:\users\alumno\desktop\parci\parcial-laboratorio1\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+
