@@ -381,10 +381,12 @@ int pedido_alta2(Pedido array[], int sizeArray)
         }
         else
         {
+             printf("\n ID: %d\n kilos: %.2f",
+                       array[posicion].idPed,array[posicion].kilo);
             utn_getFloat("\nHDPE: ","\nError",1,sizeof(float),0,1,1,&array[posicion].kilHDPE);
             utn_getFloat("\nLDPE: ","\nError",1,sizeof(float),0,1,1,&array[posicion].kilLDPE);    //mensaje + cambiar campo varFloat
             utn_getFloat("\nPP: ","\nError",1,sizeof(float),0,1,1,&array[posicion].kilPP);
-            printf("\n ID: %d\nkilHDPE: %.2f\n kilLDPE: %.2f\n kilPP: %.2f",
+            printf("\n ID: %d\nkilHDPE: %.2f\n kilLDPE: %.2f\n kilPP: %.2f",array[posicion].idPed,
             array[posicion].kilHDPE,array[posicion].kilLDPE,array[posicion].kilPP);
             retorno=0;
         }
