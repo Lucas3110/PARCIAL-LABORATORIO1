@@ -145,9 +145,10 @@ int pedido_alta(Pedido array[], int size, int* contadorID)                      
 
             array[posicion].isEmpty=0;
             utn_getFloat("\nKilos: ","\nError",1,sizeof(float),0,1,1,&array[posicion].kilo);
+            array[posicion].estado=0; //PENDIENTE
             (*contadorID)++;
             array[posicion].idPed=*contadorID;
-            printf("\n ID: %d\n kilos: %.2f",
+            printf("\n ID: %d\n kilos: %.2f\n estado: pendiente",
                    array[posicion].idPed,array[posicion].kilo);
             retorno=0;
         }
