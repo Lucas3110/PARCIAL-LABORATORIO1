@@ -84,7 +84,7 @@ int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion)
     return retorno;
 }
 /*
-/** \brief Busca un int en un array y devuelve la posicion en que se encuentra
+ \brief Busca un int en un array y devuelve la posicion en que se encuentra
 * \param array cliente Array de cliente
 * \param size int Tamaño del array
 * \param posicion int* Puntero a la posicion del array donde se encuentra el valor buscado
@@ -165,14 +165,15 @@ int cliente_alta(Cliente array[], int size, int* contadorID)                    
             array[posicion].isEmpty=0;
             utn_getName("\nNombre de cliente: ","\nNombre no valido",1,TEXT_SIZEA,1,array[posicion].nombre);
             utn_getName("\nDireccion: ","\nDireccion no valida",1,TEXT_SIZEB,1,array[posicion].direccion);
+            utn_getUnsignedInt("\nAltura: ","\nAltura erronea",1,sizeof(int),1,5,1,&array[posicion].altura);
             utn_getName("\nLocalidad: ","\nLocalidad no valida",1,TEXT_SIZEA,1,array[posicion].localidad);    //mensaje + cambiar campo varString
             utn_getCUIT("\nCUIT con guion: ","\nCUIT no valido",1,array[posicion].cuit);
             (*contadorID)++;
             array[posicion].idCli=*contadorID;
-            printf("\nID: %d\nNombre: %s\nDireccion: %s\nLocalidad: %s"
+            printf("\nID: %d\nNombre: %s\nDireccion: %s\nAltura: %d\nLocalidad: %s"
                    "\nCUIT: %s",
                    array[posicion].idCli,array[posicion].nombre,
-                   array[posicion].direccion,array[posicion].localidad,array[posicion].cuit);
+                   array[posicion].direccion,array[posicion].altura,array[posicion].localidad,array[posicion].cuit);
             retorno=0;
         }
     }
@@ -205,6 +206,7 @@ int cliente_baja(Cliente array[], int sizeArray)                                
             array[posicion].idCli=0;
             strcpy(array[posicion].nombre,"");
             strcpy(array[posicion].direccion,"");
+            array[posicion].altura=0;
             strcpy(array[posicion].localidad,"");
             strcpy(array[posicion].cuit,"");
             retorno=0;
@@ -214,7 +216,7 @@ int cliente_baja(Cliente array[], int sizeArray)                                
 }
 /*
 //Baja valor repetido
-/** \brief Borra todos los elemento del array que contengan el valor buscado
+ \brief Borra todos los elemento del array que contengan el valor buscado
 * \param array cliente Array de cliente
 * \param size int Tamaño del array
 * \param valorBuscado int Valor a buscar en el array
@@ -272,14 +274,15 @@ int cliente_modificar(Cliente array[], int sizeArray)                       //ca
         {
             do
             {       //copiar printf de alta
-                 printf("\n ID: %d\n nombre: %s\n direccion: %s\n localidad: %s\n cuit: %s",
+                 printf("\n ID: %d\n nombre: %s\n direccion: %s\n altura: %d\n localidad: %s\n cuit: %s",
                    array[posicion].idCli,array[posicion].nombre,
-                   array[posicion].direccion,array[posicion].localidad,array[posicion].cuit);
+                   array[posicion].direccion,array[posicion].altura,array[posicion].localidad,array[posicion].cuit);
                 utn_getChar("\nModificar: A-direccion B-localidad C-salir","\nError",'A','C',1,&opcion);
                 switch(opcion)
                 {   case 'A':
                         system("cls");
                         utn_getName("\nNueva direccion: ","\nError",1,TEXT_SIZEB,1,array[posicion].direccion);   //mensaje + cambiar campo varString
+                         utn_getUnsignedInt("\nNueva altura: ","\nError",1,sizeof(int),1,5,1,&array[posicion].altura);  //mensaje + cambiar campo varInt
                         break;
                     case 'B':
                         system("cls");
@@ -300,7 +303,7 @@ int cliente_modificar(Cliente array[], int sizeArray)                       //ca
 
 /*
 //Ordenar
-/** \brief Ordena por campo XXXXX los elementos de un array ante la igualdad de estos ordena por el campo ZZZZZZ
+ \brief Ordena por campo XXXXX los elementos de un array ante la igualdad de estos ordena por el campo ZZZZZZ
 * \param array cliente Array de cliente
 * \param size int Tamaño del array
 * \param orderFirst int Determina si el orden del primer criterio es ascendete o descendente
@@ -368,8 +371,8 @@ int cliente_listar(Cliente array[], int size)                      //cambiar cli
             if(array[i].isEmpty==1)
                 continue;
             else
-                printf("\nID: %d\nNombre: %s\nDireccion: %s\nLocalidad: %s\nCuit: %s",
-                       array[i].idCli,array[i].nombre,array[i].direccion,array[i].localidad
+                printf("\nID: %d\nNombre: %s\nDireccion: %s\naltura: %d\nLocalidad: %s\nCuit: %s",
+                       array[i].idCli,array[i].nombre,array[i].direccion,array[i].altura,array[i].localidad
                        ,array[i].cuit);      //cambiar todos
         }
         retorno=0;

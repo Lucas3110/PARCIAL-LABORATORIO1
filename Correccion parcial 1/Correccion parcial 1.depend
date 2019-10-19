@@ -198,3 +198,38 @@
 	"cliente.h"
 	"pedido.h"
 
+1571505027 source:c:\users\lucas\desktop\parcial q hice en clase\parcial-laboratorio1\correccion parcial 1\cliente.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+
+1571495126 c:\users\lucas\desktop\parcial q hice en clase\parcial-laboratorio1\correccion parcial 1\utn.h
+
+1571504046 c:\users\lucas\desktop\parcial q hice en clase\parcial-laboratorio1\correccion parcial 1\cliente.h
+
+1571495126 source:c:\users\lucas\desktop\parcial q hice en clase\parcial-laboratorio1\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+
+1571495126 c:\users\lucas\desktop\parcial q hice en clase\parcial-laboratorio1\correccion parcial 1\pedido.h
+
+1571495126 source:c:\users\lucas\desktop\parcial q hice en clase\parcial-laboratorio1\correccion parcial 1\pedido.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"pedido.h"
+	"cliente.h"
+
+1571495126 source:c:\users\lucas\desktop\parcial q hice en clase\parcial-laboratorio1\correccion parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+

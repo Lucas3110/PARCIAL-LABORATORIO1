@@ -12,6 +12,7 @@ typedef struct
     //-----------------
     char nombre[TEXT_SIZEA];
     char direccion[TEXT_SIZEB];
+    int altura;
     char localidad[TEXT_SIZEA];
     char cuit[TEXT_SIZEA]; //USAR VALI CUIT
 
