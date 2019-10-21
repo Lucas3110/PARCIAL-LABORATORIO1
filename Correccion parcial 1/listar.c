@@ -117,7 +117,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'C':
                                     system("cls");
-
+                                informe_cliente_pedidos(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'D':
@@ -424,6 +424,65 @@ int informe_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int 
     			"\nCantidad de de pedidos completados: %d",
     			arrayCliente[posProcMax].nombre,
 				pedidosProcMax);
+        retorno=0;
+    }
+    return retorno;
+}
+
+
+int informe_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int pedidos = 0;
+    int pedidosMax = 0;
+    int posicion;
+    int i;
+    int posMax;
+    int flag = 0;
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCliente[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
+    	            {
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
+    	            			&& arrayPedido[posicion].isEmpty==0
+								&& (arrayPedido[posicion].estado==1 || arrayPedido[posicion].estado==0))
+    	            		{
+    	            			pedidos++;
+    	            		}
+    	            	}
+
+    	            	if(flag==0)
+    	            	{
+    	            		pedidosMax = pedidos;
+    	            		posMax = i;
+    	            		flag++;
+    	            	}
+
+    	            	if(pedidos>pedidosMax)
+    	            	{
+    	            		pedidosMax = pedidos;
+    	            		posMax = i;
+    	            	}
+
+    	            	pedidos=0;
+
+    	            }
+
+    	        }
+
+    	printf("\nCliente con mas pedidos: %s"
+    			"\nCantidad de pedidos: %d",
+    			arrayCliente[posMax].nombre,
+				pedidosMax);
         retorno=0;
     }
     return retorno;
