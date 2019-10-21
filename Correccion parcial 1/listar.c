@@ -127,7 +127,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'E':
                                     system("cls");
-
+                                informe_cliente_minReciclado(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'F':
@@ -544,6 +544,67 @@ int informe_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
     			"\nCantidad de kilos: %d",
     			arrayCliente[posMax].nombre,
 				kilosRecicMax);
+        retorno=0;
+    }
+    return retorno;
+}
+
+
+int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int kilosRecic = 0;
+    int kilosRecicMin = 0;
+    int posicion;
+    int i;
+    int posMin;
+    int flag = 0;
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCliente[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
+    	            {
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
+    	            			&& arrayPedido[posicion].isEmpty==0
+								&& arrayPedido[posicion].estado==1)
+    	            		{
+    	            			kilosRecic = 0;
+    	            			kilosRecic = kilosRecic + arrayPedido[posicion].kilHDPE
+    	            									+ arrayPedido[posicion].kilLDPE
+														+ arrayPedido[posicion].kilPP;
+    	            		}
+    	            	}
+
+    	            	if(flag==0)
+    	            	{
+    	            		kilosRecicMin = kilosRecic;
+    	            		posMin = i;
+    	            		flag++;
+    	            	}
+
+    	            	if(kilosRecic<kilosRecicMin)
+    	            	{
+    	            		kilosRecicMin = kilosRecic;
+    	            		posMin = i;
+    	            	}
+
+
+    	            }
+
+    	        }
+
+    	printf("\nCliente que menos reciclo: %s"
+    			"\nCantidad de kilos: %d",
+    			arrayCliente[posMin].nombre,
+				kilosRecicMin);
         retorno=0;
     }
     return retorno;
