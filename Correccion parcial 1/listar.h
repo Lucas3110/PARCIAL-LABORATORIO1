@@ -13,3 +13,4 @@ int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
 int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int informe_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
+int localidad_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);

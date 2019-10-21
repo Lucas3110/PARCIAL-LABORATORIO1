@@ -145,6 +145,16 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
                                 informe_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
+                                case 'I':
+                                    system("cls");
+                               localidad_pendientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                    break;
+
+                                case 'J':
+                                    system("cls");
+                                informe_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                    break;
+
                                 case 'K'://Salir
                                     break;
                                 default:
@@ -754,6 +764,43 @@ int informe_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], i
 
     	    }
     	        retorno=0;
+    }
+    return retorno;
+}
+
+
+
+int localidad_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int posicion;
+    int cantPedidos = 0;
+    char localidad2[20];
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	getString("\nIngrese localidad2: ","\nError",1,20,2,localidad2);
+    	for(int i=0;i<sizeCli;i++)
+    	{
+    	    if(arrayCliente[i].isEmpty==0 && strcmp(arrayCliente[i].localidad,localidad2)==0)
+    	    {
+    	    	for(posicion=0;posicion<sizePed;posicion++)
+    	    	{
+    	    		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
+    	    				&& arrayPedido[posicion].isEmpty == 0
+							&& arrayPedido[posicion].estado == 0)
+    	    		{
+    	    			cantPedidos++;
+    	    		}
+    	    	}
+
+    	    }
+    	}
+    	printf("\nLocalidad: %s"
+    			"\nPedidos pendientes: %d",
+  				localidad2,
+  				cantPedidos);
+      	retorno=0;
     }
     return retorno;
 }
