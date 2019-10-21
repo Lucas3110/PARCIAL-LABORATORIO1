@@ -132,6 +132,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'F':
                                     system("cls");
+                                informe_cliente_masDeMil(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'G':
@@ -605,6 +606,55 @@ int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
     			"\nCantidad de kilos: %d",
     			arrayCliente[posMin].nombre,
 				kilosRecicMin);
+        retorno=0;
+    }
+    return retorno;
+}
+
+
+
+
+int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int kilosRecic = 0;
+    int cantCliente = 0;
+    int posicion;
+    int i;
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCliente[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
+    	            {
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
+    	            			&& arrayPedido[posicion].isEmpty==0
+								&& arrayPedido[posicion].estado==1)
+    	            		{
+    	            			kilosRecic=0;
+    	            			kilosRecic = kilosRecic + arrayPedido[posicion].kilHDPE
+    	            									+ arrayPedido[posicion].kilLDPE
+														+ arrayPedido[posicion].kilPP;
+    	            		}
+    	            	}
+
+    	            	if(kilosRecic>1000)
+    	            	{
+    	            		cantCliente++;
+    	            	}
+
+    	            }
+
+    	        }
+
+    	printf("\nCantidad de clientes que reciclaron mas de 1000: %d",cantCliente);
         retorno=0;
     }
     return retorno;
