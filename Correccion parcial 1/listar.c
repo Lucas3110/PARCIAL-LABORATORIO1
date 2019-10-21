@@ -142,7 +142,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'H':
                                     system("cls");
-
+                                informe_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'K'://Salir
@@ -705,6 +705,55 @@ int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int siz
 
     	printf("\nCantidad de clientes que reciclaron menos de 100: %d",cantCliente);
         retorno=0;
+    }
+    return retorno;
+}
+
+
+
+int informe_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int posicion;
+    int i;
+    float porcentaje;
+    float acumulador;
+
+    if(arrayPedido!=NULL && sizePed>0)
+    {
+    	for(i=0;i<sizePed;i++)
+    	    {
+    			if(arrayPedido[i].isEmpty==0 && arrayPedido[i].estado == 1)
+    	          {
+    				for(posicion=0;posicion<sizeCli;posicion++)
+    				{
+    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli
+    							&& arrayCliente[posicion].isEmpty == 0
+								&& arrayCliente[posicion].idCli > 0)
+    					{
+    						printf( "\n ID: %d"
+    						    	"\n Cuit: %s",
+									arrayPedido[i].idPed,
+									arrayCliente[posicion].cuit);
+    						acumulador = 0;
+    						porcentaje = 0;
+
+							acumulador = acumulador +
+										arrayPedido[i].kilHDPE +
+										arrayPedido[i].kilLDPE +
+										arrayPedido[i].kilPP;
+							porcentaje = acumulador / arrayPedido[i].kilo;
+							porcentaje = porcentaje * 100;
+							printf("Porcentaje de plastico reciclado: %.2f",porcentaje);
+
+
+    					}
+    				}
+    	          }
+
+
+    	    }
+    	        retorno=0;
     }
     return retorno;
 }
