@@ -3,3 +3,4 @@
 
 void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed);
 int imprimir_clientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
+int imprimir_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);

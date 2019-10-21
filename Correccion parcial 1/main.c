@@ -42,6 +42,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].cuit,"30-11223344-5");
     strcpy(arrayCliente[i].localidad,"CABA");
     strcpy(arrayCliente[i].direccion,"Corrientes");
+    arrayCliente[i].altura=1234;
     (*contadorIdcliente)++;
     i++;
 
@@ -53,6 +54,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].cuit,"30-44556677-6");
     strcpy(arrayCliente[i].localidad,"CABA");
     strcpy(arrayCliente[i].direccion,"Corrientes");
+    arrayCliente[i].altura=2547;
     (*contadorIdcliente)++;
     i++;
 
@@ -63,6 +65,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].cuit,"30-88995521-9");
     strcpy(arrayCliente[i].localidad,"LANUS");
     strcpy(arrayCliente[i].direccion,"cucha");
+    arrayCliente[i].altura=555;
     (*contadorIdcliente)++;
     i++;
 
@@ -74,6 +77,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].cuit,"30-56781423-5");
     strcpy(arrayCliente[i].localidad,"QUILMES");
     strcpy(arrayCliente[i].direccion,"rocha");
+    arrayCliente[i].altura=784;
     (*contadorIdcliente)++;
     i++;
 
@@ -85,6 +89,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].cuit,"31-54581253-3");
     strcpy(arrayCliente[i].localidad,"AVELLANEDA");
     strcpy(arrayCliente[i].direccion,"Mitre 750");
+    arrayCliente[i].altura=750;
     (*contadorIdcliente)++;
     i++;
 
@@ -96,6 +101,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].cuit,"30-51485759-6");
     strcpy(arrayCliente[i].localidad,"QUILMES");
     strcpy(arrayCliente[i].direccion,"rocha 741");
+    arrayCliente[i].altura=741;
 
 
     i=0;
@@ -187,7 +193,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
      arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
     arrayPedido[i].idCli=5;
-    arrayPedido[i].estado=0;
+    arrayPedido[i].estado=1;
     arrayPedido[i].kilo=30;
     arrayPedido[i].kilHDPE=10;
     arrayPedido[i].kilLDPE=5;
