@@ -16,6 +16,8 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
     cliente_inicializar(arrayCliente,QTY_ARRAY_CLI);
     pedido_inicializar(arrayPedido,QTY_ARRAY_PED);
+    cargarDatos(arrayCliente, arrayPedido, &contadorIdcliente, &contadorIdpedido);
+
 
     do
     {
@@ -51,7 +53,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
             case 4: //Alta PEDIDO
                 system("cls");
-                cliente_listar(arrayCliente,QTY_ARRAY_PED);
+                cliente_listar(arrayCliente,QTY_ARRAY_CLI);
                 printf("\n");
 
                 if(!pedido_alta(arrayPedido,QTY_ARRAY_PED,&contadorIdpedido));                   //cambiar
@@ -70,7 +72,8 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
             case 6://Listar
                 system("cls");
-                cliente_listar(arrayCliente,QTY_ARRAY_CLI);
+               //cliente_listar(arrayCliente,QTY_ARRAY_CLI);
+               imprimir_clientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                 break;
 /*
             case 5://Ordenar
@@ -149,3 +152,55 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
 }
 
+// INFORMES
+
+
+
+int imprimir_clientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int pedidosPend = 0;
+    int posicion;
+    int i;
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCliente[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
+    	            {
+    	            	printf( "\n ID: %d"
+    	            	        "\n Cuit: %s"
+    	            			"\n Nombre: %s"
+    	            			"\n Localidad: %s"
+    	                		"\n Calle: %s"
+    	   	            		"\n Altura: %d",
+								arrayCliente[i].idCli,
+								arrayCliente[i].cuit,
+								arrayCliente[i].nombre,
+								arrayCliente[i].localidad,
+								arrayCliente[i].direccion,
+    	            		    arrayCliente[i].altura);
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
+    	            			&& arrayPedido[posicion].isEmpty==0
+								&& arrayPedido[posicion].estado==0)
+    	            		{
+    	            			pedidosPend++;
+    	            		}
+    	            	}
+    	            printf("\nCantidad de pendientes: %d",pedidosPend);
+    	            pedidosPend=0;
+
+    	            }
+
+    	        }
+    	        retorno=0;
+    }
+    return retorno;
+}

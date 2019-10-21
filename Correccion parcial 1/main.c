@@ -4,13 +4,14 @@
 #include "utn.h"
 #include "cliente.h"
 #include "pedido.h"
+#include "listar.h"
 
 #define QTY_ARRAY_CLI 100
 #define QTY_ARRAY_PED 100
 #define SORT_UP 1
 #define SORT_DOWN 0
 
-//cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[],int *contadorIdcliente,int *contadorIdpedido);
+cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[],int *contadorIdcliente,int *contadorIdpedido);
 
 int main()
 {
@@ -27,7 +28,7 @@ int main()
 
 
 }
-/*
+
 
 int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdcliente, int *contadorIdpedido)
 
@@ -133,9 +134,9 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     arrayPedido[i].idCli=2;
     arrayPedido[i].estado=0;
     arrayPedido[i].kilo=100;
-    arrayPedido[i].kilHDPE=200;
-    arrayPedido[i].kilLDPE=145;
-    arrayPedido[i].kilPP=230;
+    arrayPedido[i].kilHDPE=0;
+    arrayPedido[i].kilLDPE=0;
+    arrayPedido[i].kilPP=0;
     (*contadorIdpedido)++;
     i++;
 
@@ -143,10 +144,10 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     arrayPedido[i].idPed=*contadorIdpedido;
     arrayPedido[i].idCli=2;
     arrayPedido[i].estado=0;
-    arrayPedido[i].kilo=100;
-    arrayPedido[i].kilHDPE=200;
-    arrayPedido[i].kilLDPE=145;
-    arrayPedido[i].kilPP=230;
+    arrayPedido[i].kilo=300;
+    arrayPedido[i].kilHDPE=0;
+    arrayPedido[i].kilLDPE=0;
+    arrayPedido[i].kilPP=0;
     (*contadorIdpedido)++;
     i++;
 
@@ -163,18 +164,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
 
      arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    arrayPedido[i].idCli=1;
-    arrayPedido[i].estado=1;
-    arrayPedido[i].kilo=1500;
-    arrayPedido[i].kilHDPE=500;
-    arrayPedido[i].kilLDPE=150;
-    arrayPedido[i].kilPP=270;
-    (*contadorIdpedido)++;
-    i++;
-
-     arrayPedido[i].isEmpty=0;
-    arrayPedido[i].idPed=*contadorIdpedido;
-    arrayPedido[i].idCli=1;
+    arrayPedido[i].idCli=4;
     arrayPedido[i].estado=1;
     arrayPedido[i].kilo=750;
     arrayPedido[i].kilHDPE=100;
@@ -187,37 +177,36 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     arrayPedido[i].idPed=*contadorIdpedido;
     arrayPedido[i].idCli=1;
     arrayPedido[i].estado=0;
-    arrayPedido[i].kilo=1000;
-    arrayPedido[i].kilHDPE=200;
-    arrayPedido[i].kilLDPE=145;
-    arrayPedido[i].kilPP=230;
+    arrayPedido[i].kilo=200;
+    arrayPedido[i].kilHDPE=0;
+    arrayPedido[i].kilLDPE=0;
+    arrayPedido[i].kilPP=0;
     (*contadorIdpedido)++;
     i++;
 
      arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    arrayPedido[i].idCli=1;
+    arrayPedido[i].idCli=5;
     arrayPedido[i].estado=0;
-    arrayPedido[i].kilo=1000;
-    arrayPedido[i].kilHDPE=200;
-    arrayPedido[i].kilLDPE=145;
-    arrayPedido[i].kilPP=230;
+    arrayPedido[i].kilo=30;
+    arrayPedido[i].kilHDPE=10;
+    arrayPedido[i].kilLDPE=5;
+    arrayPedido[i].kilPP=3;
     (*contadorIdpedido)++;
     i++;
 
      arrayPedido[i].isEmpty=0;
     arrayPedido[i].idPed=*contadorIdpedido;
-    arrayPedido[i].idCli=1;
-    arrayPedido[i].estado=1;
-    arrayPedido[i].kilo=1000;
-    arrayPedido[i].kilHDPE=200;
-    arrayPedido[i].kilLDPE=145;
-    arrayPedido[i].kilPP=230;
-
+    arrayPedido[i].idCli=6;
+    arrayPedido[i].estado=0;
+    arrayPedido[i].kilo=456;
+    arrayPedido[i].kilHDPE=0;
+    arrayPedido[i].kilLDPE=0;
+    arrayPedido[i].kilPP=0;
 
 
 
 
        return 0;
 }
-*/
+

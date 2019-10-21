@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "utn.h"
 #include "cliente.h" //cambiar por nombre entidad
+#include "listar.h"
 
 
 /** \brief  To indicate that all position in the array are empty,
