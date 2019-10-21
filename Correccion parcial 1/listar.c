@@ -105,32 +105,39 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
                             switch(opcionB)
                             {
                                 case 'A':
-
+                                    system("cls");
+                                    informe_cliente_pedientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'B':
-
+                                system("cls");
 
                                 case 'C':
+                                    system("cls");
 
                                     break;
 
                                 case 'D':
+                                    system("cls");
 
                                     break;
 
                                 case 'E':
+                                    system("cls");
 
                                     break;
 
                                 case 'F':
+                                    system("cls");
                                     break;
 
                                 case 'G':
+                                    system("cls");
 
                                     break;
 
                                 case 'H':
+                                    system("cls");
 
                                     break;
 
@@ -296,6 +303,65 @@ int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
 
     	    }
     	        retorno=0;
+    }
+    return retorno;
+}
+
+
+int informe_cliente_pedientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int pedidosPend = 0;
+    int pedidosPendMax = 0;
+    int posicion;
+    int i;
+    int posPendMax;
+    int flag = 0;
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCliente[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
+    	            {
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
+    	            			&& arrayPedido[posicion].isEmpty==0
+								&& arrayPedido[posicion].estado==0)
+    	            		{
+    	            			pedidosPend++;
+    	            		}
+    	            	}
+
+    	            	if(flag==0)
+    	            	{
+    	            		pedidosPendMax = pedidosPend;
+    	            		posPendMax = i;
+    	            		flag++;
+    	            	}
+
+    	            	if(pedidosPend>pedidosPendMax)
+    	            	{
+    	            		pedidosPendMax = pedidosPend;
+    	            		posPendMax = i;
+    	            	}
+
+    	            	pedidosPend=0;
+
+    	            }
+
+    	        }
+
+    	printf("\nCliente con mas pedidos pendientes: %s"
+    			"\nCantidad de de pedidos pendientes: %d",
+    			arrayCliente[posPendMax].nombre,
+				pedidosPendMax);
+        retorno=0;
     }
     return retorno;
 }

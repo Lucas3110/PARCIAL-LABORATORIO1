@@ -41,7 +41,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].nombre,"Telefonica");
     strcpy(arrayCliente[i].cuit,"30-11223344-5");
     strcpy(arrayCliente[i].localidad,"CABA");
-    strcpy(arrayCliente[i].direccion,"Corrientes");
+    strcpy(arrayCliente[i].direccion,"Lima");
     arrayCliente[i].altura=1234;
     (*contadorIdcliente)++;
     i++;
@@ -88,7 +88,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].nombre,"DIA");
     strcpy(arrayCliente[i].cuit,"31-54581253-3");
     strcpy(arrayCliente[i].localidad,"AVELLANEDA");
-    strcpy(arrayCliente[i].direccion,"Mitre 750");
+    strcpy(arrayCliente[i].direccion,"Mitre");
     arrayCliente[i].altura=750;
     (*contadorIdcliente)++;
     i++;
@@ -100,7 +100,7 @@ int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[], int *contadorIdclie
     strcpy(arrayCliente[i].nombre,"QUILMES");
     strcpy(arrayCliente[i].cuit,"30-51485759-6");
     strcpy(arrayCliente[i].localidad,"QUILMES");
-    strcpy(arrayCliente[i].direccion,"rocha 741");
+    strcpy(arrayCliente[i].direccion,"rocha");
     arrayCliente[i].altura=741;
 
 
