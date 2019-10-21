@@ -235,7 +235,7 @@ int imprimir_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
     						    	"\n Cuit: %s"
     						    	"\n Calle: %s"
     						    	"\n Altura: %d"
-    								"\n Kilos a recolectar: %d"
+    								"\n Kilos a recolectar: %.2f"
 									"\n Estado: Pendiente",
 									arrayPedido[i].idPed,
     								arrayCliente[posicion].cuit,
