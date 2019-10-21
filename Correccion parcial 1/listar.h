@@ -11,3 +11,4 @@ int informe_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int siz
 int informe_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
+int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int sizeCli, int sizePed);

@@ -137,7 +137,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'G':
                                     system("cls");
-
+                                informe_cliente_menosDeCien(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'H':
@@ -655,6 +655,55 @@ int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int si
     	        }
 
     	printf("\nCantidad de clientes que reciclaron mas de 1000: %d",cantCliente);
+        retorno=0;
+    }
+    return retorno;
+}
+
+
+
+int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int kilosRecic=0;
+    int cantCliente = 0;
+    int posicion;
+    int i;
+
+    if(arrayCli!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCli[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCli[i].isEmpty==0 && arrayCli[i].idCli > 0)
+    	            {
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCli[i].idCli == arrayPedido[posicion].idCli
+    	            			&& arrayPedido[posicion].isEmpty==0
+								&& arrayPedido[posicion].estado==1)
+    	            		{
+    	            			kilosRecic = 0;
+    	            			kilosRecic = kilosRecic + arrayPedido[posicion].kilHDPE
+    	            									+ arrayPedido[posicion].kilLDPE
+														+ arrayPedido[posicion].kilPP;
+    	            		}
+    	            	}
+
+    	            	if(kilosRecic<100 && arrayPedido[posicion].idCli>0)
+    	            	{
+    	            		cantCliente++;
+    	            		kilosRecic=100;
+    	            	}
+
+    	            }
+
+    	        }
+
+    	printf("\nCantidad de clientes que reciclaron menos de 100: %d",cantCliente);
         retorno=0;
     }
     return retorno;
