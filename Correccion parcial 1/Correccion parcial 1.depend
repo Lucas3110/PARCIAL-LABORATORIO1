@@ -283,3 +283,45 @@
 	"pedido.h"
 	"cliente.h"
 
+1571576921 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\cliente.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"cliente.h"
+	"listar.h"
+
+1571575818 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\utn.h
+
+1571575818 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\cliente.h
+
+1571681098 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.h
+	"pedido.h"
+	"cliente.h"
+
+1571575818 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\pedido.h
+
+1571679906 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"pedido.h"
+	"listar.h"
+
+1571579296 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\pedido.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"pedido.h"
+	"cliente.h"
+	"listar.h"
+
+1571575818 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+

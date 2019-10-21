@@ -83,8 +83,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
             case 8 ://Listar
                 system("cls");
-               //cliente_listar(arrayCliente,QTY_ARRAY_CLI);
-               imprimir_clientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+               imprimir_procesados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                 break;
 
 
@@ -242,6 +241,53 @@ int imprimir_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
  									arrayCliente[posicion].direccion,
     		               		    arrayCliente[posicion].altura,
 									arrayPedido[i].kilo);
+
+    					}
+    				}
+    	          }
+
+
+    	    }
+    	        retorno=0;
+    }
+    return retorno;
+}
+
+
+int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+
+    int retorno=-1;
+    int posicion;
+    int i;
+
+    if(arrayPedido!=NULL && sizePed>0)
+    {
+    	for(i=0;i<sizePed;i++)
+    	    {
+    			if(arrayPedido[i].isEmpty==0 && arrayPedido[i].estado == 1)
+    	          {
+    				for(posicion=0;posicion<sizeCli;posicion++)
+    				{
+    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli
+    							&& arrayCliente[posicion].isEmpty == 0
+								&& arrayCliente[posicion].idCli > 0)
+    					{
+    						printf( "\n ID: %d"
+    						    	"\n Cuit: %s"
+    						    	"\n Calle: %s"
+    						    	"\n Altura: %d"
+    								"\n Kilos de HDPE: %.2f"
+    								"\n Kilos de LDPE: %.2f"
+    								"\n Kilos de PP: %.2f"
+									"\n Estado: Completado",
+									arrayPedido[i].idPed,
+    								arrayCliente[posicion].cuit,
+ 									arrayCliente[posicion].direccion,
+    		               		    arrayCliente[posicion].altura,
+									arrayPedido[i].kilHDPE,
+									arrayPedido[i].kilLDPE,
+									arrayPedido[i].kilPP);
 
     					}
     				}
