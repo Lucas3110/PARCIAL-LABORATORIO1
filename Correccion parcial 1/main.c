@@ -11,7 +11,7 @@
 #define SORT_UP 1
 #define SORT_DOWN 0
 
-cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[],int *contadorIdcliente,int *contadorIdpedido);
+int cargarDatos(Cliente arrayCliente[],Pedido arrayPedido[],int *contadorIdcliente,int *contadorIdpedido);
 
 int main()
 {

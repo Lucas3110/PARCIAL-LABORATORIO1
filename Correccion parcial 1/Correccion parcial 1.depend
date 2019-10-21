@@ -295,13 +295,13 @@
 
 1571575818 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\cliente.h
 
-1571681924 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.h
+1571682532 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.h
 	"pedido.h"
 	"cliente.h"
 
 1571575818 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\pedido.h
 
-1571681707 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\main.c
+1571682306 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -310,7 +310,7 @@
 	"pedido.h"
 	"listar.h"
 
-1571579296 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\pedido.c
+1571682306 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\pedido.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>

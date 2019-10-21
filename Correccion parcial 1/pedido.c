@@ -159,9 +159,9 @@ int pedido_alta(Pedido array[], int size, int* contadorID)                      
     return retorno;
 }
 /*
-//*****************************************
+
 //Baja valor unico
-/** \brief Borra un elemento del array por ID
+ \brief Borra un elemento del array por ID
 * \param array pedido Array de pedido
 * \param size int Tamaño del array
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
@@ -293,7 +293,7 @@ int pedido_modificar(Pedido array[], int sizeArray)                       //camb
 
 
 //Ordenar
-/** \brief Ordena por campo XXXXX los elementos de un array ante la igualdad de estos ordena por el campo ZZZZZZ
+\brief Ordena por campo XXXXX los elementos de un array ante la igualdad de estos ordena por el campo ZZZZZZ
 * \param array pedido Array de pedido
 * \param size int Tamaño del array
 * \param orderFirst int Determina si el orden del primer criterio es ascendete o descendente

@@ -4,6 +4,7 @@
 #include "utn.h"
 #include "pedido.h"
 #include "cliente.h"
+#include "listar.h"
 #define QTY_ARRAY_CLI 100
 #define QTY_ARRAY_PED 100
 
@@ -111,6 +112,8 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'B':
                                 system("cls");
+                                informe_cliente_procesados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                 break;
 
                                 case 'C':
                                     system("cls");
@@ -361,6 +364,66 @@ int informe_cliente_pedientes(Cliente arrayCliente[],Pedido arrayPedido[], int s
     			"\nCantidad de de pedidos pendientes: %d",
     			arrayCliente[posPendMax].nombre,
 				pedidosPendMax);
+        retorno=0;
+    }
+    return retorno;
+}
+
+
+
+int informe_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int pedidosProc = 0;
+    int pedidosProcMax = 0;
+    int posicion;
+    int i;
+    int posProcMax;
+    int flag = 0;
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCliente[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
+    	            {
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
+    	            			&& arrayPedido[posicion].isEmpty==0
+								&& arrayPedido[posicion].estado==1)
+    	            		{
+    	            			pedidosProc++;
+    	            		}
+    	            	}
+
+    	            	if(flag==0)
+    	            	{
+    	            		pedidosProcMax = pedidosProc;
+    	            		posProcMax = i;
+    	            		flag++;
+    	            	}
+
+    	            	if(pedidosProc>pedidosProcMax)
+    	            	{
+    	            		pedidosProcMax = pedidosProc;
+    	            		posProcMax = i;
+    	            	}
+
+    	            	pedidosProc=0;
+
+    	            }
+
+    	        }
+
+    	printf("\nCliente con mas pedidos procesados: %s"
+    			"\nCantidad de de pedidos completados: %d",
+    			arrayCliente[posProcMax].nombre,
+				pedidosProcMax);
         retorno=0;
     }
     return retorno;
