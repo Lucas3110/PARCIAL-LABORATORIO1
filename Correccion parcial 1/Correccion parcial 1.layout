@@ -2,14 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="utn.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1043" topLine="15" />
+		</Cursor>
+	</File>
 	<File name="pedido.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="230" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="pedido.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-8" zoom_2="0">
+	<File name="listar.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="-10" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4546" topLine="134" />
+			<Cursor1 position="25573" topLine="837" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="142" topLine="5" />
 		</Cursor>
 	</File>
 	<File name="utn.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,34 +27,24 @@
 			<Cursor1 position="10796" topLine="322" />
 		</Cursor>
 	</File>
-	<File name="utn.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1043" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="cliente.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="627" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="listar.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="-10" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1756" topLine="33" />
-		</Cursor>
-	</File>
-	<File name="listar.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1341" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="cliente.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-9" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="150" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-4" zoom_2="0">
+	<File name="pedido.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-8" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="242" topLine="47" />
+			<Cursor1 position="4546" topLine="134" />
+		</Cursor>
+	</File>
+	<File name="listar.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="531" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="cliente.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="627" topLine="17" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

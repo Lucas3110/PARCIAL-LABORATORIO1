@@ -157,8 +157,9 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
                                         "mas kilos\nE) Cliente que reciclo menos kilos"
                                         "\nF) Cantidad de clientes que reciclaron mas de 1000 kilos"
                                         "\nG) Cantidad de clientes que reciclaron menos de 100 kilos\nH)"
-                                        " Imprimir pedidos completados\nI) Cant kil PP promedio por cliente"
-                                        " \nJ) Ingresar cuit e informar cant total tipo\nK) Volver\n","\nError",1,&opcionB)!=0)
+                                        " Imprimir pedidos completados\nI) Pedidos pendientes por localidad"
+                                        " \nJ) Promedio de PP \nK) Ingresar cuit e informar cant total tipo\n"
+                                        "L) Volver\n","\nError",1,&opcionB)!=0)
                             opcionB='K';   //Salir
                         else
                         {
@@ -166,42 +167,42 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
                             {
                                 case 'A':
                                     system("cls");
-                                    informe_cliente_pendientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                    listar_cliente_pendientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'B':
                                 system("cls");
-                                informe_cliente_procesados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_cliente_procesados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                  break;
 
                                 case 'C':
                                     system("cls");
-                                informe_cliente_pedidos(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_cliente_pedidos(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'D':
                                     system("cls");
-                                informe_cliente_maxReciclado(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_cliente_maxReciclado(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'E':
                                     system("cls");
-                                informe_cliente_minReciclado(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_cliente_minReciclado(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'F':
                                     system("cls");
-                                informe_cliente_masDeMil(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_cliente_masDeMil(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'G':
                                     system("cls");
-                                informe_cliente_menosDeCien(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_cliente_menosDeCien(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'H':
                                     system("cls");
-                                informe_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'I':
@@ -211,16 +212,16 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'J':
                                     system("cls");
-                                informe_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
-                                case 'K'://Salir
+                                case 'L'://Salir
                                     break;
                                 default:
                                     printf("\nOpcion no valida");
                             }
                         }
-                    }while(opcionB!='K');
+                    }while(opcionB!='L');
                    //saque break
                 }
                 case 11:
@@ -375,7 +376,7 @@ int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
 }
 
 
-int informe_cliente_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int pedidosPend = 0;
@@ -433,7 +434,7 @@ int informe_cliente_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int 
 
 
 
-int informe_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int pedidosProc = 0;
@@ -490,7 +491,7 @@ int informe_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int 
 }
 
 
-int informe_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int pedidos = 0;
@@ -547,7 +548,7 @@ int informe_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int siz
 
 
 
-int informe_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int kilosRecic = 0;
@@ -605,7 +606,7 @@ int informe_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
 }
 
 
-int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int kilosRecic = 0;
@@ -666,7 +667,7 @@ int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
 
 
 
-int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int kilosRecic = 0;
@@ -714,7 +715,7 @@ int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int si
 
 
 
-int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int kilosRecic=0;
@@ -763,7 +764,7 @@ int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int siz
 
 
 
-int informe_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int posicion;

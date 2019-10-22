@@ -295,7 +295,7 @@
 
 1571575818 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\cliente.h
 
-1571745885 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.h
+1571748027 c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.h
 	"pedido.h"
 	"cliente.h"
 
@@ -325,7 +325,7 @@
 	<string.h>
 	"utn.h"
 
-1571745333 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.c
+1571748027 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
