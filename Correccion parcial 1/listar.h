@@ -11,7 +11,7 @@ int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
 
 
 int listar_cliente_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
-int listar_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
+int listar_cliente_completados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int listar_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int listar_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int listar_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);

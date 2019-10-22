@@ -8,6 +8,17 @@
 #define QTY_ARRAY_CLI 100
 #define QTY_ARRAY_PED 100
 
+
+/** \brief Funcion que muestra un menu principal con las opciones del programa y llama al resto de las funciones
+ * \param Cliente arayCliente[] Cliente Estructura que se le pasa al resto de las funciones
+ * \param Pedido arrayPedido[] Pedido Estructura que se le pasa al resto de las funciones
+ * \param sizeCli int Tamaño de la estructura Cliente
+ * \param sizePed int Tamaño de la estructura Pedido
+ * \return void
+ *
+ */
+
+
 void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 {
     int opcion;
@@ -172,7 +183,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'B':
                                 system("cls");
-                                listar_cliente_procesados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                listar_cliente_completados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                  break;
 
                                 case 'C':
@@ -268,6 +279,14 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
 
 
+/** \brief Lista los elementos de dos arrays vinculados
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 
 int imprimir_clientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
@@ -310,6 +329,16 @@ int imprimir_clientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, 
 }
 
 
+
+/** \brief Lista los elementos de dos arrays vinculados
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
+
 int imprimir_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
@@ -341,6 +370,15 @@ int imprimir_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
     return retorno;
 }
 
+
+/** \brief Lista los elementos de dos arrays vinculados
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
@@ -375,6 +413,15 @@ int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
     return retorno;
 }
 
+
+/** \brief Lista los clientes con mas pedidos pendientes
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 int listar_cliente_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
@@ -433,8 +480,16 @@ int listar_cliente_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int s
 }
 
 
+/** \brief Lista los clientes con mas pedidos completados
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
-int listar_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int listar_cliente_completados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int pedidosProc = 0;
@@ -490,6 +545,16 @@ int listar_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int s
     return retorno;
 }
 
+
+
+/** \brief Lista los clientes con mas pedidos
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 int listar_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
@@ -547,6 +612,14 @@ int listar_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int size
 }
 
 
+/** \brief Lista el cliente que reciclo mas kilos
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 int listar_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
@@ -605,6 +678,14 @@ int listar_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int
     return retorno;
 }
 
+/** \brief Lista el cliente que reciclo menos kilos
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 int listar_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
@@ -665,6 +746,14 @@ int listar_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], int
 }
 
 
+/** \brief Lista los clientes que reciclaron mas de 1000 kilos
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 
 int listar_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
@@ -713,6 +802,15 @@ int listar_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int siz
     return retorno;
 }
 
+
+/** \brief Lista los clientes que reciclaron menos de 100 kilos
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 
 int listar_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int sizeCli, int sizePed)
@@ -763,6 +861,14 @@ int listar_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int size
 }
 
 
+/** \brief Lista los pedidos completados con % de kilos reciclados
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 int listar_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
@@ -808,6 +914,14 @@ int listar_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], in
 }
 
 
+/** \brief Lista la cantidad de pedidos pendientes para la localidad indicada
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
 
 int localidad_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
