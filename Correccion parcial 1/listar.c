@@ -166,7 +166,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
                             {
                                 case 'A':
                                     system("cls");
-                                    informe_cliente_pedientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                    informe_cliente_pendientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'B':
@@ -286,22 +286,12 @@ int imprimir_clientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, 
     	          }
                 else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
     	            {
-    	            	printf( "\n ID: %d"
-    	            	        "\n Cuit: %s"
-    	            			"\n Nombre: %s"
-    	            			"\n Localidad: %s"
-    	                		"\n Calle: %s"
-    	   	            		"\n Altura: %d",
-								arrayCliente[i].idCli,
-								arrayCliente[i].cuit,
-								arrayCliente[i].nombre,
-								arrayCliente[i].localidad,
-								arrayCliente[i].direccion,
-    	            		    arrayCliente[i].altura);
+    	            	printf( "\n ID: %d\n Cuit: %s\n Nombre: %s\n Localidad: %s\n Calle: %s\n Altura: %d",
+								arrayCliente[i].idCli,arrayCliente[i].cuit,arrayCliente[i].nombre,arrayCliente[i].localidad,
+								arrayCliente[i].direccion,arrayCliente[i].altura);
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& arrayPedido[posicion].estado==0)
     	            		{
     	            			pedidosPend++;
@@ -333,22 +323,12 @@ int imprimir_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
     	          {
     				for(posicion=0;posicion<sizeCli;posicion++)
     				{
-    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli
-    							&& arrayCliente[posicion].isEmpty == 0
+    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli	&& arrayCliente[posicion].isEmpty == 0
 								&& arrayCliente[posicion].idCli > 0)
     					{
-    						printf( "\n ID: %d"
-    						    	"\n Cuit: %s"
-    						    	"\n Calle: %s"
-    						    	"\n Altura: %d"
-    								"\n Kilos a recolectar: %.2f"
-									"\n Estado: Pendiente",
-									arrayPedido[i].idPed,
-    								arrayCliente[posicion].cuit,
- 									arrayCliente[posicion].direccion,
-    		               		    arrayCliente[posicion].altura,
-									arrayPedido[i].kilo);
-
+    						printf( "\n ID: %d\n Cuit: %s\n Calle: %s\n Altura: %d\n Kilos a recolectar: %.2f\n Estado: Pendiente",
+									arrayPedido[i].idPed,arrayCliente[posicion].cuit,arrayCliente[posicion].direccion,
+    		               		    arrayCliente[posicion].altura,arrayPedido[i].kilo);
     					}
     				}
     	          }
@@ -376,26 +356,13 @@ int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
     	          {
     				for(posicion=0;posicion<sizeCli;posicion++)
     				{
-    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli
-    							&& arrayCliente[posicion].isEmpty == 0
+    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli	&& arrayCliente[posicion].isEmpty == 0
 								&& arrayCliente[posicion].idCli > 0)
     					{
-    						printf( "\n ID: %d"
-    						    	"\n Cuit: %s"
-    						    	"\n Calle: %s"
-    						    	"\n Altura: %d"
-    								"\n Kilos de HDPE: %.2f"
-    								"\n Kilos de LDPE: %.2f"
-    								"\n Kilos de PP: %.2f"
-									"\n Estado: Completado",
-									arrayPedido[i].idPed,
-    								arrayCliente[posicion].cuit,
- 									arrayCliente[posicion].direccion,
-    		               		    arrayCliente[posicion].altura,
-									arrayPedido[i].kilHDPE,
-									arrayPedido[i].kilLDPE,
-									arrayPedido[i].kilPP);
-
+    						printf( "\n ID: %d\n Cuit: %s\n Calle: %s\n Altura: %d\n Kilos de HDPE: %.2f\n Kilos de LDPE: %.2f"
+    								"\n Kilos de PP: %.2f\n Estado: Completado",
+									arrayPedido[i].idPed,arrayCliente[posicion].cuit,arrayCliente[posicion].direccion,
+    		               		    arrayCliente[posicion].altura,arrayPedido[i].kilHDPE,arrayPedido[i].kilLDPE,arrayPedido[i].kilPP);
     					}
     				}
     	          }
@@ -408,7 +375,7 @@ int imprimir_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli
 }
 
 
-int informe_cliente_pedientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+int informe_cliente_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
 {
     int retorno=-1;
     int pedidosPend = 0;
@@ -430,8 +397,7 @@ int informe_cliente_pedientes(Cliente arrayCliente[],Pedido arrayPedido[], int s
     	            {
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& arrayPedido[posicion].estado==0)
     	            		{
     	            			pedidosPend++;
@@ -457,12 +423,11 @@ int informe_cliente_pedientes(Cliente arrayCliente[],Pedido arrayPedido[], int s
 
     	        }
 
-    	printf("\nCliente con mas pedidos pendientes: %s"
-    			"\nCantidad de de pedidos pendientes: %d",
-    			arrayCliente[posPendMax].nombre,
-				pedidosPendMax);
+    	printf("\nCliente con mas pedidos pendientes: %s\nCantidad de de pedidos pendientes: %d",
+    			arrayCliente[posPendMax].nombre,pedidosPendMax);
         retorno=0;
     }
+
     return retorno;
 }
 
@@ -490,8 +455,7 @@ int informe_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int 
     	            {
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& arrayPedido[posicion].estado==1)
     	            		{
     	            			pedidosProc++;
@@ -517,12 +481,11 @@ int informe_cliente_procesados(Cliente arrayCliente[],Pedido arrayPedido[], int 
 
     	        }
 
-    	printf("\nCliente con mas pedidos procesados: %s"
-    			"\nCantidad de de pedidos completados: %d",
-    			arrayCliente[posProcMax].nombre,
-				pedidosProcMax);
+    	printf("\nCliente con mas pedidos procesados: %s\nCantidad de de pedidos completados: %d",
+    			arrayCliente[posProcMax].nombre,pedidosProcMax);
         retorno=0;
     }
+
     return retorno;
 }
 
@@ -549,8 +512,7 @@ int informe_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int siz
     	            {
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& (arrayPedido[posicion].estado==1 || arrayPedido[posicion].estado==0))
     	            		{
     	            			pedidos++;
@@ -576,10 +538,8 @@ int informe_cliente_pedidos(Cliente arrayCliente[],Pedido arrayPedido[], int siz
 
     	        }
 
-    	printf("\nCliente con mas pedidos: %s"
-    			"\nCantidad de pedidos: %d",
-    			arrayCliente[posMax].nombre,
-				pedidosMax);
+    	printf("\nCliente con mas pedidos: %s\nCantidad de pedidos: %d",
+    			arrayCliente[posMax].nombre,pedidosMax);
         retorno=0;
     }
     return retorno;
@@ -609,8 +569,7 @@ int informe_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
     	            {
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& arrayPedido[posicion].estado==1)
     	            		{
     	            			kilosRecic=0;
@@ -637,12 +596,11 @@ int informe_cliente_maxReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
 
     	        }
 
-    	printf("\nCliente que mas reciclo: %s"
-    			"\nCantidad de kilos: %d",
-    			arrayCliente[posMax].nombre,
-				kilosRecicMax);
+    	printf("\nCliente que mas reciclo: %s\nCantidad de kilos: %d",
+    			arrayCliente[posMax].nombre,kilosRecicMax);
         retorno=0;
     }
+
     return retorno;
 }
 
@@ -669,8 +627,7 @@ int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
     	            {
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& arrayPedido[posicion].estado==1)
     	            		{
     	            			kilosRecic = 0;
@@ -698,12 +655,11 @@ int informe_cliente_minReciclado(Cliente arrayCliente[],Pedido arrayPedido[], in
 
     	        }
 
-    	printf("\nCliente que menos reciclo: %s"
-    			"\nCantidad de kilos: %d",
-    			arrayCliente[posMin].nombre,
-				kilosRecicMin);
+    	printf("\nCliente que menos reciclo: %s\nCantidad de kilos: %d",
+    			arrayCliente[posMin].nombre,kilosRecicMin);
         retorno=0;
     }
+
     return retorno;
 }
 
@@ -730,8 +686,7 @@ int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int si
     	            {
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& arrayPedido[posicion].estado==1)
     	            		{
     	            			kilosRecic=0;
@@ -753,6 +708,7 @@ int informe_cliente_masDeMil(Cliente arrayCliente[],Pedido arrayPedido[], int si
     	printf("\nCantidad de clientes que reciclaron mas de 1000: %d",cantCliente);
         retorno=0;
     }
+
     return retorno;
 }
 
@@ -778,8 +734,7 @@ int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int siz
     	            {
     	            	for(posicion=0;posicion<sizePed;posicion++)
     	            	{
-    	            		if(arrayCli[i].idCli == arrayPedido[posicion].idCli
-    	            			&& arrayPedido[posicion].isEmpty==0
+    	            		if(arrayCli[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
 								&& arrayPedido[posicion].estado==1)
     	            		{
     	            			kilosRecic = 0;
@@ -802,6 +757,7 @@ int informe_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int siz
     	printf("\nCantidad de clientes que reciclaron menos de 100: %d",cantCliente);
         retorno=0;
     }
+
     return retorno;
 }
 
@@ -823,14 +779,10 @@ int informe_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], i
     	          {
     				for(posicion=0;posicion<sizeCli;posicion++)
     				{
-    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli
-    							&& arrayCliente[posicion].isEmpty == 0
+    					if(arrayPedido[i].idCli == arrayCliente[posicion].idCli	&& arrayCliente[posicion].isEmpty == 0
 								&& arrayCliente[posicion].idCli > 0)
     					{
-    						printf( "\n ID: %d"
-    						    	"\n Cuit: %s",
-									arrayPedido[i].idPed,
-									arrayCliente[posicion].cuit);
+    						printf( "\n ID: %d\n Cuit: %s",arrayPedido[i].idPed,arrayCliente[posicion].cuit);
     						acumulador = 0;
     						porcentaje = 0;
 
@@ -872,8 +824,7 @@ int localidad_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCl
     	    {
     	    	for(posicion=0;posicion<sizePed;posicion++)
     	    	{
-    	    		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli
-    	    				&& arrayPedido[posicion].isEmpty == 0
+    	    		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty == 0
 							&& arrayPedido[posicion].estado == 0)
     	    		{
     	    			cantPedidos++;
@@ -882,10 +833,8 @@ int localidad_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCl
 
     	    }
     	}
-    	printf("\nLocalidad: %s"
-    			"\nPedidos pendientes: %d",
-  				localidad2,
-  				cantPedidos);
+    	printf("\nLocalidad: %s\nPedidos pendientes: %d",
+  				localidad2,cantPedidos);
       	retorno=0;
     }
     return retorno;
