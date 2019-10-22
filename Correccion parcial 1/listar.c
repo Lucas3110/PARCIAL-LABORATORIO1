@@ -13,6 +13,8 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
     int opcion;
     int contadorIdcliente=0;
     int contadorIdpedido=0;
+    int flagCli = 1; //lo dejo en 1 por el hardcodeo de datos
+    int flagPed = 1;
     char opcionB;
 
     cliente_inicializar(arrayCliente,QTY_ARRAY_CLI);
@@ -30,66 +32,123 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
         {
             case 1: //Alta
                 system("cls");
-                if(!cliente_alta(arrayCliente,QTY_ARRAY_CLI,&contadorIdcliente));                   //cambiar
-                {
-                    printf("\n----Se dio de ALTA exitosamente!----\n");
-                }
+
+                    if(!cliente_alta(arrayCliente,QTY_ARRAY_CLI,&contadorIdcliente));                   //cambiar
+                    {   flagCli==1;
+                        printf("\n----Se dio de ALTA exitosamente!----\n");
+                    }
+
+
                 break;
 
             case 2: //Modificar
                 system("cls");
-                if(!cliente_modificar(arrayCliente,QTY_ARRAY_CLI));
-                {
-                     printf("\n----Se modifico exitosamente----\n");
-                }
+                 if(flagCli==0)
+                    {
+                        printf("\nTodavia no se dio alta ningun cliente");
+                    }
+                    else
+                    {
+                        cliente_listar(arrayCliente,QTY_ARRAY_CLI);
+                        if(!cliente_modificar(arrayCliente,QTY_ARRAY_CLI));
+                        {
+                             printf("\n----Se modifico exitosamente----\n");
+                        }
+                   }
+
                 break;
 
             case 3: //Baja
                 system("cls");
-                if(!cliente_baja(arrayCliente,QTY_ARRAY_CLI));
-                {
-                    printf("\n----Se dio de BAJA exitosamente!----\n");
-                }
+                 if(flagCli==0)
+                    {
+                        printf("\nTodavia no se dio alta ningun cliente");
+                    }
+                    else
+                    {
+                        if(!cliente_baja(arrayCliente,QTY_ARRAY_CLI));
+                        {
+                            printf("\n----Se dio de BAJA exitosamente!----\n");
+                        }
+                    }
                 break;
 
             case 4: //Alta PEDIDO
                 system("cls");
-                cliente_listar(arrayCliente,QTY_ARRAY_CLI);
-                printf("\n");
+                 if(flagCli==0)
+                    {
+                        printf("\nTodavia no se dio alta ningun cliente");
+                    }
+                    else
+                    {
+                        cliente_listar(arrayCliente,QTY_ARRAY_CLI);
+                        printf("\n");
 
-                if(!pedido_alta(arrayPedido,QTY_ARRAY_PED,&contadorIdpedido));                   //cambiar
-                {
-                    printf("\n----Se dio de ALTA exitosamente!----\n");
-                }
-
+                        if(!pedido_alta(arrayPedido,QTY_ARRAY_PED,&contadorIdpedido));                   //cambiar
+                        {   flagPed=1;
+                            printf("\n----Se dio de ALTA exitosamente!----\n");
+                        }
+                    }
                 break;
             case 5://alta residuo
                 system("cls");
-
-                 pedido_alta2(arrayPedido,QTY_ARRAY_PED);                   //cambiar
-
-
+                 if(flagPed==0)
+                    {
+                        printf("\nTodavia no se dio alta ningun pedido");
+                    }
+                        else
+                        {
+                            pedido_alta2(arrayPedido,QTY_ARRAY_PED);
+                        }
                 break;
 
             case 6://Listar
                 system("cls");
-               imprimir_clientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                if(flagPed==0 && flagCli == 0)
+                    {
+                        printf("\nTodavia no se dio alta ningun pedido o cliente");
+                    }
+                     else
+                        {
+                           imprimir_clientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                        }
                 break;
 
             case 7://Listar
                 system("cls");
-              imprimir_pendientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                if(flagPed==0 && flagCli == 0)
+                    {
+                        printf("\nTodavia no se dio alta ningun pedido o cliente");
+                    }
+                     else
+                        {
+                            imprimir_pendientes(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                        }
                 break;
 
 
             case 8 ://Listar
                 system("cls");
-               imprimir_procesados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                if(flagPed==0 && flagCli == 0)
+                    {
+                        printf("\nTodavia no se dio alta ningun pedido o cliente");
+                    }
+                     else
+                        {
+                            imprimir_procesados(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+
+                        }
                 break;
 
 
           case 9://Informes
                 system("cls");
+                if(flagPed==0 && flagCli == 0)
+                    {
+                        printf("\nTodavia no se dio alta ningun pedido o cliente");
+                    }
+                     else
+                        {
                    do
                     {
                         if(utn_getLetra("\n\nInformes:\nA) Cliente con mas pedidos pendientes"
@@ -163,7 +222,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
                         }
                     }while(opcionB!='K');
                    //saque break
-
+                }
                 case 11:
                     break;
 

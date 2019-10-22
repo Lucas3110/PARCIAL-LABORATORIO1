@@ -325,3 +325,12 @@
 	<string.h>
 	"utn.h"
 
+1571744579 source:c:\users\lucas\desktop\parci dia 2\correccion parcial 1\listar.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"pedido.h"
+	"cliente.h"
+	"listar.h"
+
