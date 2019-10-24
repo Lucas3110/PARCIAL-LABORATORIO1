@@ -84,35 +84,7 @@ int cliente_buscarID(Cliente array[], int size, int valorBuscado, int* posicion)
     }
     return retorno;
 }
-/*
- \brief Busca un int en un array y devuelve la posicion en que se encuentra
-* \param array cliente Array de cliente
-* \param size int Tamaño del array
-* \param posicion int* Puntero a la posicion del array donde se encuentra el valor buscado
-* \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
-*
 
-int cliente_buscarInt(Cliente array[], int size, int valorBuscado, int* posicion)                    //cambiar cliente
-{
-    int retorno=-1;
-    int i;
-    if(array!= NULL && size>=0)
-    {
-        for(i=0;i<size;i++)
-        {
-            if(array[i].isEmpty==1)
-                continue;
-            else if(array[i].varInt1==valorBuscado)                                                   //cambiar campo varInt
-            {
-                retorno=0;
-                *posicion=i;
-                break;
-            }
-        }
-    }
-    return retorno;
-}
-*/
 //String
 /** \brief Busca un string en un array
 * \param array cliente Array de cliente
@@ -215,40 +187,7 @@ int cliente_baja(Cliente array[], int sizeArray)                                
     }
     return retorno;
 }
-/*
-//Baja valor repetido
- \brief Borra todos los elemento del array que contengan el valor buscado
-* \param array cliente Array de cliente
-* \param size int Tamaño del array
-* \param valorBuscado int Valor a buscar en el array
-* \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
-*
 
-int cliente_bajaValorRepetidoInt(Cliente array[], int sizeArray, int valorBuscado) //cuando hay que dar de baja todas las posiciones en las que se encuentra ese int
-{
-    int retorno=-1;
-    int i;
-    if(array!=NULL && sizeArray>0)
-    {
-        for(i=0;i<sizeArray;i++)
-        {
-            if(array[i].idCli==valorBuscado)                                //cambiar si no se busca por ID
-            {
-                array[i].isEmpty=1;
-                array[i].idCli=0;
-                strcpy(array[i].nombre,"");
-                strcpy(array[i].direccion,"");
-                strcpy(array[i].localidad,"");
-                strcpy(array[i].cuit,"");                               //cambiar campo varString
-
-            }
-        }
-        retorno=0;
-    }
-    return retorno;
-}
-
-*/
 
 //*****************************************
 //Modificar
@@ -302,57 +241,7 @@ int cliente_modificar(Cliente array[], int sizeArray)                       //ca
     return retorno;
 }
 
-/*
-//Ordenar
- \brief Ordena por campo XXXXX los elementos de un array ante la igualdad de estos ordena por el campo ZZZZZZ
-* \param array cliente Array de cliente
-* \param size int Tamaño del array
-* \param orderFirst int Determina si el orden del primer criterio es ascendete o descendente
-* \param orderSecond int Determina si el orden del segunbdo criterio es ascendete o descendente
-* \param size int Tamaño del array
-* \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se ordena exitosamente
-*
 
-int cliente_ordenarPorDobleCriterio(Cliente array[],int size, int orderFirst, int orderSecond)  //cambiar cliente
-{
-    int retorno=-1;
-    int i;
-    Cliente buffer;
-    int flagSwap;
-
-    if(array!=NULL && size>=0)
-    {
-        do
-        {
-            flagSwap=0;
-            for (i = 1; i < size-1; i++)
-            {
-                if( ((strcmp(array[i].nombre,array[i+1].nombre) < 0) && orderFirst) ||
-                    ((strcmp(array[i].nombre,array[i+1].nombre) > 0) && !orderFirst) )
-                {
-                    flagSwap=1;
-                    buffer = array[i];
-                    array[i] = array[i+1];
-                    array[i+1] = buffer;
-                }
-                else if(strcmp(array[i].nombre,array[i+1].nombre) == 0)
-                {
-                    if( ((array[i].varFloat1 < array[i+1].varFloat1) && orderSecond) ||
-                        ((array[i].varFloat1 > array[i+1].varFloat1) && !orderSecond) )
-                    {
-                        flagSwap=1;
-                        buffer = array[i];
-                        array[i] = array[i+1];
-                        array[i+1] = buffer;
-                    }
-                }
-            }
-        }while(flagSwap);
-        retorno=0;
-    }
-    return retorno;
-}
-*/
 //*****************************************
 //Listar
 /** \brief Lista los elementos de un array

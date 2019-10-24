@@ -37,7 +37,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
     {
         utn_getUnsignedInt("\n\n1) Alta de cliente \n2) Modificar datos de cliente \n3) Baja de cliente"
                            "\n4) Crear pedido de recoleccion \n5) Procesar residuos \n6) Imprimir clientes"
-                           "\n7) Imprimir pedidos pendientes \n8) Imprimir pedidos procesados \n9) informes \n11) Salir\n",                   //cambiar
+                           "\n7) Imprimir pedidos pendientes \n8) Imprimir pedidos completados \n9) informes \n11) Salir\n",                   //cambiar
                            "\nError",1,sizeof(int),1,11,2,&opcion);
         switch(opcion)
         {
@@ -223,7 +223,7 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
 
                                 case 'J':
                                     system("cls");
-                                listar_procesados_porcentaje(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                               listar_cliente_pp_promedio(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
                                 case 'L'://Salir
@@ -954,6 +954,88 @@ int localidad_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCl
     }
     return retorno;
 }
+/** \brief Lista la cantidad de kilos PP reciclados promedio por cliente
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
+int listar_cliente_pp_promedio(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    float kilosRecic = 0;
+    float cantClientes = 0;
+    float promedio = 0;
+    int posicion;
+    int i;
+    int idAnterior = 0;
+
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	for(i=0;i<sizeCli;i++)
+    	    {
+    			if(arrayCliente[i].isEmpty==1)
+    	          {
+    	            continue;
+    	          }
+                else if(arrayCliente[i].isEmpty==0 && arrayCliente[i].idCli > 0)
+    	            {
+    	            	for(posicion=0;posicion<sizePed;posicion++)
+    	            	{
+    	            		if(arrayCliente[i].idCli == arrayPedido[posicion].idCli	&& arrayPedido[posicion].isEmpty==0
+								&& arrayPedido[posicion].estado==1)
+    	            		{
+    	            			if(idAnterior!=arrayPedido[posicion].idCli)
+    	            			{
+    	            				idAnterior = arrayPedido[posicion].idCli;
+    	            				cantClientes++;
+    	            			}
+    	            			kilosRecic = kilosRecic + arrayPedido[posicion].kilPP;
+    	            		}
+
+    	            	}
+
+    	            	promedio = kilosRecic/cantClientes;
+
+    	            }
+
+    	        }
+
+    	printf("\nPromedio de kilos de PP por cliente: %.2f",
+    			promedio);
+        retorno=0;
+    }
+
+    return retorno;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
