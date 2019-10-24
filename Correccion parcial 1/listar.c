@@ -226,6 +226,12 @@ void menu(Cliente arrayCliente[],Pedido arrayPedido[],int sizeCli,int sizePed)
                                listar_cliente_pp_promedio(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
                                     break;
 
+                                case 'K':
+                                    system("cls");
+                               listar_tipo_plastico(arrayCliente,arrayPedido,QTY_ARRAY_CLI,QTY_ARRAY_PED);
+                                    break;
+
+
                                 case 'L'://Salir
                                     break;
                                 default:
@@ -843,7 +849,7 @@ int listar_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int size
     	            		}
     	            	}
 
-    	            	if(kilosRecic<100 && arrayPedido[posicion].idCli>0)
+    	            	if(kilosRecic<100)
     	            	{
     	            		cantCliente++;
     	            		kilosRecic=100;
@@ -1010,7 +1016,78 @@ int listar_cliente_pp_promedio(Cliente arrayCliente[],Pedido arrayPedido[], int 
 
     return retorno;
 }
+/** \brief Lista la cantidad de kilos tipo que se indique luego de ingresar un cuit cliente
+* \param arrayA Cliente Array de Cliente
+* \param arrayB Pedido Array de Pedido
+* \param sizeCli int Tamaño del arrayA
+* \param sizePed int Tamaño del arrayB
+* \return int Return (-1) si Error [Invalid length or NULL pointer] - (0) Ok
+*
+*/
+int listar_tipo_plastico(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed)
+{
+    int retorno=-1;
+    int kilosRecic = 0;
+    int i;
+    int h;
+    int l;
+    int p;
+    char cuitA[14];
+    char opcion;
 
+    if(arrayCliente!=NULL && sizeCli>0)
+    {
+    	utn_getCUIT("\nIngrese cuit: ","\nError",2,cuitA);
+    	for(i=0;i<sizeCli;i++)
+    	{
+    	    if(arrayCliente[i].isEmpty==0 && strcmp(arrayCliente[i].cuit,cuitA)==0)
+    	    {
+    	    	utn_getChar("\nIngrese tipo: _HDPE(A) _LDPE(B) _PP(C)","\nError",'A','C',2,&opcion);
+    	    	switch(opcion)
+    	    	{
+    	    	case 'A':
+    	    		for(h=0;h<sizePed;h++)
+    	    		{
+       	    			if(arrayCliente[i].idCli == arrayPedido[h].idCli && arrayPedido[h].isEmpty == 0	&& arrayPedido[h].estado == 1)
+    	    		    {
+       	    				kilosRecic = kilosRecic + arrayPedido[h].kilHDPE;
+    	    		    }
+    	    		}
+    	    		printf("\nKilos reciclados de HDPE: %d",kilosRecic);
+    	    		break;
+
+    	    	case 'B':
+    	    		for(l=0;l<sizePed;l++)
+    	       		{
+    	      			if(arrayCliente[i].idCli == arrayPedido[l].idCli && arrayPedido[l].isEmpty == 0	&& arrayPedido[l].estado == 1)
+    	    		    {
+    	    		    	kilosRecic = kilosRecic + arrayPedido[l].kilLDPE;
+    	    		    }
+    	       		}
+    	       		printf("\nKilos reciclados de LDPE: %d",kilosRecic);
+    	    	    break;
+
+    	    	case 'C':
+    	    		for(p=0;p<sizePed;p++)
+    	      		{
+    	       			if(arrayCliente[i].idCli == arrayPedido[p].idCli && arrayPedido[p].isEmpty == 0	&& arrayPedido[p].estado == 1)
+    	       		    {
+    	       				kilosRecic = kilosRecic + arrayPedido[p].kilPP;
+    	       		    }
+    	       		}
+    	       		printf("\nKilos reciclados de PP: %d",kilosRecic);
+    	    	    break;
+
+    	    	default:
+    	    		printf("\nOpcion invalida");
+    	    		break;
+    	    	}
+    		}
+        	retorno=0;
+    	}
+    }
+    return retorno;
+}
 
 
 

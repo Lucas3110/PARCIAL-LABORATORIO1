@@ -20,3 +20,4 @@ int listar_cliente_menosDeCien(Cliente arrayCli[],Pedido arrayPedido[], int size
 int listar_procesados_porcentaje(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int localidad_pendientes(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
 int listar_cliente_pp_promedio(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
+int listar_tipo_plastico(Cliente arrayCliente[],Pedido arrayPedido[], int sizeCli, int sizePed);
