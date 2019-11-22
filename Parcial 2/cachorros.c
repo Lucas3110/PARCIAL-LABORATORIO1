@@ -387,5 +387,15 @@ int cachorro_filtrarDias(void* this)
     return retorno;
 }
 
+int cachorro_filtrarHembras(void* this)
+{
+    int retorno = -1;
+    Cachorro* auxCachorro = (Cachorro*)this;
+    int comparison = strcmp(auxCachorro->genero, "M");
+    if(!comparison)
+        retorno = 1;
+
+    return retorno;
+}
 
 

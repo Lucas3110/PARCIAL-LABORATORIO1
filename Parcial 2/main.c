@@ -15,9 +15,10 @@ int main()
     LinkedList* registro = ll_newLinkedList();
     LinkedList* registroCallejero = ll_newLinkedList();
     LinkedList* registroDias = ll_newLinkedList();
+    LinkedList* registroHembras = ll_newLinkedList();
 
     do{
-        utn_getUnsignedInt("\n1) Cargar desde el archivo en modo texto\n4) Listar Empleados\n5) Listar Callejero\n5) Listar Dias\n9) Guardar el archivo en modo texto\n10) Salir\n", "ERROR: Ingrese un numero valido.", 0, 3, 0, 10, 1, &option);
+        utn_getUnsignedInt("\n1) Cargar desde el archivo en modo texto\n4) Listar Empleados\n5) Listar Callejero\n5) Listar Dias\n7) Listar Hembras\n9) Guardar el archivo en modo texto\n10) Salir\n", "ERROR: Ingrese un numero valido.", 0, 3, 0, 10, 1, &option);
 
         switch(option)
         {
@@ -27,6 +28,7 @@ int main()
                     controller_loadFromText("cachorros.csv",registro);
                     registroCallejero = ll_filter(registro, cachorro_filtrarCallejero);
                     registroDias = ll_filter(registro, cachorro_filtrarDias);
+                    registroHembras = ll_filter(registro, cachorro_filtrarHembras);
 
                 }else{
                     utn_getUnsignedInt("Ya se han cargado los datos. Desea volver a cargarlos? Esto borrara todo el contenido sin guardar. \n 1) Si - 2) No", "ERROR: Ingrese un numero valido.", 0, 3, 0, 10, 1, &respuesta);
@@ -37,6 +39,7 @@ int main()
                         controller_loadFromText("cachorros.csv",registro);
                         registroCallejero = ll_filter(registro, cachorro_filtrarCallejero);
                         registroDias = ll_filter(registro, cachorro_filtrarDias);
+                        registroDias = ll_filter(registro, cachorro_filtrarHembras);
                     }
                 }
                 break;
@@ -49,9 +52,9 @@ int main()
             case 6:
                 controller_ListCachorro(registroDias);
                 break;
-           /* case 7:
-                controller_sortEmployee(registro);
-                break;
+           case 7:
+                controller_ListCachorro(registroHembras);
+                break;/*
             case 9:
                 controller_saveAsText("cachorros2.csv", registro);
                 break;*/

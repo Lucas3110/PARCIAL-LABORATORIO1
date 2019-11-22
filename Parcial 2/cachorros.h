@@ -39,5 +39,6 @@ int cachorro_getDiasAsString(Cachorro* this, char* resultado);
 
 int cachorro_filtrarCallejero(void* this);
 int cachorro_filtrarDias(void* this);
+int cachorro_filtrarHembras(void* this);
 
 #endif // cachorro_H_INCLUDED
